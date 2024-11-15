@@ -1,0 +1,144 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+/* Main header styles */
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 20px;
+    text-align: center;
+    transition: ease-in-out 2s pink;
+}
+
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.logo img {
+    max-width: 600px;
+    height: fit-content;
+    transition: max-width 1s ease; /* Smoothly resize over 1 second */
+
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: white;
+    font-size: 25pt;
+    padding-top: 400px;
+    
+}
+
+.nav-links {
+    display: flex;
+    gap: 60px;
+    list-style-type: none;
+    justify-content: center;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: rgb(231, 231, 231); /* Original link color */
+    text-transform: uppercase;
+    transition: color 0.3s ease; /* Smooth transition for color change */
+    letter-spacing: 0.4cap;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.418);
+}
+
+.nav-links li a:hover {
+    color: rgb(129, 224, 255); /* Light blue color on hover */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.418);
+}
+
+/* Compact Header Specific Styles */
+.header.compact {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background in compact mode */
+    padding: 10px 0;
+    width: 100vw; /* Ensure it spans the full viewport width */
+    left: 0; /* Align to the very left */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.compact-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; /* Centered container for compact content */
+    padding: 0 20px; /* Padding for spacing within compact content */
+    margin: 0 auto;
+    color: white;
+    background-color: rgba(173, 216, 230, 0.4);
+    backdrop-filter: blur(3px); /* Apply blur effect */
+    -webkit-backdrop-filter: blur(3px); /* For Safari compatibility */
+}
+
+/* Ensure the compact logo size is smaller */
+.header.compact .logo img {
+    max-width: 100px;
+    height: auto;
+}
+
+/* Alignment for compact navigation sections */
+.nav-left, .nav-right {
+    display: flex;
+    width: 20%;
+    justify-content: space-around;
+}
+
+.nav-left ul, .nav-right ul {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    justify-content: space-evenly;
+}
+
+.nav-left ul li a, .nav-right ul li a {
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+/* Initial state before entering */
+.header-transition-enter {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95); /* Slide up and shrink slightly */
+}
+
+/* Active state while entering */
+.header-transition-enter-active {
+    opacity: 1;
+    transform: translateY(0) scale(1); /* Slide to position and resize to normal */
+    transition: opacity .4s ease, transform .4s ease;
+}
+
+/* Initial state before exiting */
+.header-transition-exit {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Active state while exiting */
+.header-transition-exit-active {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95); /* Slide up and shrink slightly */
+    transition: opacity .05s ease, transform .05s ease;
+}
