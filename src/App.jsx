@@ -1,4 +1,4 @@
-// src/App.js
+// src/App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
@@ -12,16 +12,17 @@ import './App.css';
 function App() {
     return (
         <Router>
-        <div className="App">  
-        <Header />
-        <div className="background-container">
-        </div>
-            <Routes>
+            <div className="App">
+                <Header />
+                
+                <Routes>
                     {/* Home Route */}
+                   
                     <Route path="/" element={
                         <>
+                        <div className="background-container">
+                        </div>
                             <section className="hero-section">
-                            
                             </section>
 
                             <section className="content-section">
@@ -38,7 +39,7 @@ function App() {
                     <Route path="/testimonials" element={<TestimonialsPage />} />
                     <Route path="/contact" element={<ContactPage />} />
                 </Routes>
-        </div>
+            </div>
 
         </Router>
     );

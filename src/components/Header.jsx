@@ -1,28 +1,34 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Header.css';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import logo from '../assets/logo.png';
 
 function Header() {
+    const location = useLocation();
     const [isCompact, setIsCompact] = useState(false);
     const [applyDelay, setApplyDelay] = useState(false);
-    const [scrollY, setScrollY] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
-            // Update scroll position
-            setScrollY(window.scrollY);
-
-            // Trigger compact mode when scroll exceeds threshold
-            setIsCompact(window.scrollY > 200);
+            if (location.pathname === '/') {
+                // Only apply scroll behavior on the home page
+                setIsCompact(window.scrollY > 200);
+            }
         };
 
-        window.addEventListener('scroll', handleScroll);
-        
+        if (location.pathname === '/') {
+            window.addEventListener('scroll', handleScroll);
+        } else {
+            // Force compact header on other pages
+            setIsCompact(true);
+        }
+
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
+    }, [location]);
 
     useEffect(() => {
         if (isCompact) {
@@ -43,52 +49,53 @@ function Header() {
                     unmountOnExit
                 >
                     {isCompact ? (
-                        <div
-                            className="header-content compact-content"
-                            style={{
-                                transform: 'translateY(0)',
-                                position: 'fixed',
-                                top: 0,
-                                width: '100%',
-                            }}
-                        >
-                            <div className="nav-left">
-                                <ul>
-                                    <li><a href="#services">Services + Pricing</a></li>
-                                    <li><a href="#gallery">Galleries</a></li>
-                                </ul>
-                            </div>
-                            <div className="logo">
-                                <img src={logo} alt="Logo" />
-                            </div>
-                            <div className="nav-right">
-                                <ul>
-                                    <li><a href="#testimonials">Testimonials</a></li>
-                                    <li><a href="#contact">Contact</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                               <div className="header-content compact-content">
+                               <div className="nav-left">
+                                   <ul>
+                                       <li>
+                                           <Link to="/services">Services + Pricing</Link>
+                                       </li>
+                                       <li>
+                                           <Link to="/galleries">Galleries</Link>
+                                       </li>
+                                   </ul>
+                               </div>
+                               <div className="logo">
+                                   <img src={logo} alt="Logo" />
+                               </div>
+                               <div className="nav-right">
+                                   <ul>
+                                       <li>
+                                           <Link to="/testimonials">Testimonials</Link>
+                                       </li>
+                                       <li>
+                                           <Link to="/contact">Contact</Link>
+                                       </li>
+                                   </ul>
+                               </div>
+                           </div>
                     ) : (
-                        <div
-                            className="header-content"
-                        >
-                            <div className="logo">
-                                <img src={logo} alt="Logo" />
-                            </div>
-                            <nav 
-                            className="navbar" 
-                            style={{
-                                transform: `translateY(-${scrollY}px)`, // Move the entire header-content based on scroll position
-                                transition: 'transform 0s', // Instant translation to match scroll
-                            }}>
-                                <ul className="nav-links">
-                                    <li><a href="#services">Services + Pricing</a></li>
-                                    <li><a href="#gallery">Galleries</a></li>
-                                    <li><a href="#testimonials">Testimonials</a></li>
-                                    <li><a href="#contact">Contact</a></li>
-                                </ul>
-                            </nav>
+                        <div className="header-content">
+                        <div className="logo">
+                            <img src={logo} alt="Logo" />
                         </div>
+                        <nav className="navbar">
+                            <ul className="nav-links">
+                                <li>
+                                    <Link to="/services">Services + Pricing</Link>
+                                </li>
+                                <li>
+                                    <Link to="/galleries">Galleries</Link>
+                                </li>
+                                <li>
+                                    <Link to="/testimonials">Testimonials</Link>
+                                </li>
+                                <li>
+                                    <Link to="/contact">Contact</Link>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
                     )}
                 </CSSTransition>
             </SwitchTransition>

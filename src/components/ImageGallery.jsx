@@ -1,12 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './ImageGallery.css';
 import graduation from '../assets/graduation.jpg';
 import portrait from '../assets/portrait.jpg';
 import family from '../assets/family.jpg';
+
 function ImageGallery() {
     const images = [
         {
-            src: graduation, // Update with your actual image paths
+            src: graduation, 
             title: 'Graduation',
             description: 'Celebrate your achievements',
             link: '/graduation', // URL to redirect to graduation page
@@ -28,17 +30,13 @@ function ImageGallery() {
     return (
         <div className="image-gallery">
             {images.map((image, index) => (
-                <div
-                    key={index}
-                    className="gallery-item"
-                    onClick={() => window.location.href = image.link} // Redirect on click
-                >
+                <Link to={image.link} key={index} className="gallery-item">
                     <img src={image.src} alt={image.title} className="gallery-image" />
                     <div className="overlay">
                         <h3>{image.title}</h3>
                         <p>{image.description}</p>
                     </div>
-                </div>
+                </Link>
             ))}
         </div>
     );
