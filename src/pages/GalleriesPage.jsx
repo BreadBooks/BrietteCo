@@ -40,7 +40,7 @@ function GalleriesPage() {
                             <h2>{gallery.title}</h2>
                             <p>{gallery.description}</p>
                             <Link to={gallery.link} className="gallery-link">
-                                View {gallery.title} Gallery
+                                See More {gallery.title} Photos
                             </Link>
                         </div>
                     </div>

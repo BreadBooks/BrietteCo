@@ -6,6 +6,22 @@ import portrait1 from '../assets/portrait1.jpg';
 import portrait2 from '../assets/portrait2.jpg';
 import portrait3 from '../assets/portrait3.jpg';
 
+function CustomArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+        <div
+            className={className}
+            style={{
+                ...style,
+                background: 'lightblue', // Customize background
+                borderRadius: '50%',
+                opacity: 1,
+            }}
+            onClick={onClick}
+        />
+    );
+}
+
 function SoloPortraitCarousel() {
     const settings = {
         dots: true,
@@ -13,6 +29,9 @@ function SoloPortraitCarousel() {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
+        arrows: true, // Enable navigation arrows
+        prevArrow: <CustomArrow />, // Custom Previous Arrow
+        nextArrow: <CustomArrow />, // Custom Next Arrow
     };
 
     return (

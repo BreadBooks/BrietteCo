@@ -6,6 +6,22 @@ import family1 from '../assets/family1.jpg';
 import family2 from '../assets/family2.jpg';
 import family3 from '../assets/family3.jpg';
 
+function CustomArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+        <div
+            className={className}
+            style={{
+                ...style,
+                background: 'lightblue', // Customize background
+                borderRadius: '50%',
+                opacity: 1,
+            }}
+            onClick={onClick}
+        />
+    );
+}
+
 function FamilyCarousel() {
     const settings = {
         dots: true,
@@ -13,6 +29,9 @@ function FamilyCarousel() {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
+        arrows: true, // Enable navigation arrows
+        prevArrow: <CustomArrow />, // Custom Previous Arrow
+        nextArrow: <CustomArrow />, // Custom Next Arrow
     };
 
     return (

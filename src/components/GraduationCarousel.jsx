@@ -13,7 +13,7 @@ function CustomArrow(props) {
             className={className}
             style={{
                 ...style,
-                background: 'black', // Customize background
+                background: 'lightblue', // Customize background
                 borderRadius: '50%',
                 opacity: 1,
             }}
