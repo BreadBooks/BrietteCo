@@ -5,6 +5,7 @@
     justify-content: center;
     flex-wrap: wrap;
     padding: 20px;
+    align-items: center;
 }
 
 .gallery-item {

@@ -13,7 +13,6 @@ body, html {
     padding: 20px;
     text-align: center;
     transition: ease-in-out 2s pink;
-    
 
 }
 
@@ -103,7 +102,7 @@ body, html {
 
 /* Ensure the compact logo size is smaller */
 .header.compact .logo img {
-    max-width: 100px;
+    max-width: 80px;
     height: auto;
 }
 
@@ -135,6 +134,7 @@ body, html {
 
 .nav-right ul {
     justify-content: flex-start;
+    padding-left: 0px;
 }
 
 .nav-left ul li , .nav-right ul li  {
@@ -147,6 +147,7 @@ body, html {
     font-weight: bold;
     text-transform: uppercase;
     transition: color 0.3s ease;
+    text-decoration: none;
 }
 
 /* Initial state before entering */
