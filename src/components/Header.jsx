@@ -49,7 +49,6 @@ function Header() {
 
     const translateStyle = {
         transform: `translateY(-${scrollOffset}px)`,
-        transition: 'transform 0.05s ease-out', // Smooth transition as the user scrolls
     };
 
     return (

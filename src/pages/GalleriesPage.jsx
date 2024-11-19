@@ -31,7 +31,7 @@ function GalleriesPage() {
     return (
         <div className="galleries-page">
             <h1>Our Galleries</h1>
-            <p>Explore different types of photoshoots and select the one that suits you best!</p>
+            <p className='gallSubtext'>Explore different types of photoshoots and select the one that suits you best!</p>
             <div className="gallery-cards">
                 {galleryData.map((gallery, index) => (
                     <div key={index} className="gallery-card">
@@ -45,6 +45,15 @@ function GalleriesPage() {
                         </div>
                     </div>
                 ))}
+            </div>
+            <div className="services-note">
+                <p>
+                    Interested in booking a photoshoot? Visit our{' '}
+                    <Link to="/services" className="services-link">
+                        Services Page
+                    </Link>{' '}
+                    for more details and to schedule your session today!
+                </p>
             </div>
         </div>
     );
