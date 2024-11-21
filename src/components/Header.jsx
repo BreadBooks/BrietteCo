@@ -84,7 +84,7 @@ function Header() {
                             <div className="nav-right">
                                 <ul>
                                     <li>
-                                        <Link to="/testimonials">Testimonials</Link>
+                                        <Link to="/aboutme">About Me</Link>
                                     </li>
                                     <li>
                                         <Link to="/contact">Contact</Link>
@@ -108,7 +108,7 @@ function Header() {
                                         <Link to="/galleries">Galleries</Link>
                                     </li>
                                     <li>
-                                        <Link to="/testimonials">Testimonials</Link>
+                                        <Link to="/aboutme">About Me</Link>
                                     </li>
                                     <li>
                                         <Link to="/contact">Contact</Link>
