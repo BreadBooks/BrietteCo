@@ -1,6 +1,8 @@
 // src/pages/TestimonialsPage.jsx
 import React from 'react';
 import './AboutMe.css';
+import peachy from '../assets/peachy.jpg';
+
 
 
 function TestimonialsPage() {
@@ -17,9 +19,7 @@ function TestimonialsPage() {
                 Thanks for stopping by—I can’t wait to help you capture memories that will make your heart smile!
             </p>
             <div className="icon-decorations">
-                <img src="cat-paw.png" alt="Cat paw print icon" />
-                <img src="camera-icon.png" alt="Camera icon" />
-                <img src="texas-star.png" alt="Texas star icon" />
+            <img src={peachy} alt="Orange Cat" />
             </div>
             <div className="texas-motif">
                 Proudly Texan

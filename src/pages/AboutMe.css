@@ -57,15 +57,18 @@ body {
 
 /* Icon Styles */
 .icon-decorations {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    gap: 15px;
+    margin: 20px auto; /* Centers the image */
+     /* Adjust the size */
+    border-radius: 10px; /* Optional: Rounded corners */
+    border: 3px solid rgb(166, 201, 212); /* Match theme */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow for emphasis */
+    overflow: hidden;
 }
 
 .icon-decorations img {
-    width: 40px;
-    height: 40px;
+    width: 100%; /* Ensure the image fits within the container */
+    height: auto;
+    display: block;
 }
 
 /* Footer Motif */
