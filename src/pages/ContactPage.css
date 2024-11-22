@@ -62,7 +62,7 @@
     font-family: 'Arial', sans-serif;
     font-size: 1rem;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: rgb(78, 146, 168);
     color: #fff;
     border: none;
     border-radius: 25px;
@@ -71,7 +71,7 @@
 }
 
 .contact-button:hover {
-    background-color: #0056b3;
+    background-color: rgb(131, 195, 216);
 }
 
 /* Mobile Responsiveness */
