@@ -7,6 +7,7 @@ import ServicesPage from './pages/ServicesPage';
 import GalleriesPage from './pages/GalleriesPage';
 import TestimonialsPage from './pages/TestimonialsPage';
 import ContactPage from './pages/ContactPage';
+import FamilyGallery from './pages/FamilyGallery';
 import './App.css';
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
                     <Route path="/galleries" element={<GalleriesPage />} />
                     <Route path="/aboutme" element={<TestimonialsPage />} />
                     <Route path="/contact" element={<ContactPage />} />
+                    <Route path="/family" element={<FamilyGallery />} />
                 </Routes>
             </div>
 
