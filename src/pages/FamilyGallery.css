@@ -6,7 +6,7 @@
     text-align: center;
     background-color: rgb(255, 255, 255);
     min-height: 100vh;
-
+    border-width: thin;
 }
 
 .gallery-title {
@@ -14,7 +14,6 @@
     font-size: 2.5rem;
     color: #333;
     text-shadow: black blur 2px 1px 1px;
-   
 }
 
 .gallery-grid {
@@ -34,8 +33,26 @@
     cursor: pointer;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     border: none; /* Removes any border styles */
+    background-color: #f0f0f0; /* Light gray placeholder background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* Ensure placeholder background shows immediately before image loads */
+.gallery-photo::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0; /* Matches the gallery-photo background color */
+    z-index: -1;
+}
+
+/* Hover Effects */
 .gallery-photo:hover {
     transform: scale(1.05); /* Slight zoom on hover */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Adds a shadow effect on hover */

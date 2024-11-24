@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component'; // Import LazyLoadImage
+import 'react-lazy-load-image-component/src/effects/blur.css'; // Optional: Add a blur effect
 import './FamilyGallery.css';
+
 
 import family21 from '../assets/family21.jpg';
 import family22 from '../assets/family22.jpg';
@@ -78,22 +81,23 @@ function FamilyGallery() {
     return (
         <div className="family-gallery">
             <h1 className="gallery-title">Family & Couple Gallery</h1>
-            <button className="redirect-button" onClick={() => navigate('/galleries')}>
-                Visit Other Galleries
-            </button>
+            <p className="gallSubtext">Visit Other Galleries</p>
 
+            {/* Lazy Load Thumbnails in Grid */}
             <div className="gallery-grid">
                 {photos.map((photo, index) => (
-                    <img
+                    <LazyLoadImage
                         key={index}
-                        src={photo}
-                        alt={`Family or Couple ${index + 1}`}
+                        src={photo} // Thumbnail or preview image
+                        alt={`Family${index + 1}`}
                         className="gallery-photo"
-                        onClick={() => openLightbox(index)}
+                        effect="blur" // Optional: Adds a blur effect while loading
+                        onClick={() => openLightbox(index)} // Open lightbox on click
                     />
                 ))}
             </div>
 
+            {/* Lightbox with Full-Quality Images */}
             {selectedPhotoIndex !== null && (
                 <div className="lightbox">
                     <button className="lightbox-close" onClick={closeLightbox}>
@@ -103,8 +107,8 @@ function FamilyGallery() {
                         &#8249;
                     </button>
                     <img
-                        src={photos[selectedPhotoIndex]}
-                        alt={`Selected Family or Couple ${selectedPhotoIndex + 1}`}
+                        src={photos[selectedPhotoIndex]} // Full-quality image
+                        alt={`Selected Family${selectedPhotoIndex + 1}`}
                         className="lightbox-image"
                     />
                     <button className="lightbox-arrow right" onClick={goToNextPhoto}>
