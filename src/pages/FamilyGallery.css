@@ -6,18 +6,20 @@
     text-align: center;
     background-color: rgb(255, 255, 255);
     min-height: 100vh;
+
 }
 
 .gallery-title {
     font-family: 'Pacifico', cursive;
     font-size: 2.5rem;
     color: #333;
-    margin-bottom: 30px;
+    text-shadow: black blur 2px 1px 1px;
+   
 }
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Responsive grid */
     gap: 20px; /* More padding between cards */
     margin: 0 auto;
     width: 100%; /* Full width */
@@ -26,8 +28,8 @@
 /* Image Styling */
 .gallery-photo {
     width: 100%;
-    height: 425px; /* Adjust height for a 5x7 aspect ratio */
-    aspect-ratio: 5 / 7; /* Ensures the card keeps the 5x7 proportion */
+    height: 650px; /* Adjust height for a 5x7 aspect ratio */
+    aspect-ratio: 8.5 / 11; /* Ensures the card keeps the 5x7 proportion */
     object-fit: cover; /* Ensures the image fills the space without distortion */
     cursor: pointer;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -93,4 +95,20 @@
 .lightbox-close:hover,
 .lightbox-arrow:hover {
     color: #007bff;
+}
+
+.redirect-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 0.5rem 1rem;
+    background-color: rgb(78, 146, 168);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.redirect-button:hover {
+    background-color: rgb(136, 176, 189);
 }

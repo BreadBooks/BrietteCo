@@ -21,7 +21,10 @@ import family17 from '../assets/family17.jpg';
 import family18 from '../assets/family18.jpg';
 import family19 from '../assets/family19.jpg';
 import family20 from '../assets/family20.jpg';
-
+import family24 from '../assets/family24.jpg';
+import family25 from '../assets/family25.jpg';
+import family26 from '../assets/family26.jpg';
+import family27 from '../assets/family27.jpg';
 const photos = [
     family21,
     family22,
@@ -43,6 +46,10 @@ const photos = [
     family18,
     family19,
     family20,
+    family24,
+    family25,
+    family26, 
+    family27
 ];
 
 function FamilyGallery() {
@@ -71,6 +78,10 @@ function FamilyGallery() {
     return (
         <div className="family-gallery">
             <h1 className="gallery-title">Family & Couple Gallery</h1>
+            <button className="redirect-button" onClick={() => navigate('/galleries')}>
+                Visit Other Galleries
+            </button>
+
             <div className="gallery-grid">
                 {photos.map((photo, index) => (
                     <img
