@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component'; // Import LazyLoadImage
-import 'react-lazy-load-image-component/src/effects/blur.css'; // Optional: Add a blur effect
+import React, { useState, useEffect } from 'react';
 import './FamilyGallery.css';
-
+import { Link } from 'react-router-dom';
 
 import family21 from '../assets/family21.jpg';
 import family22 from '../assets/family22.jpg';
@@ -28,6 +26,7 @@ import family24 from '../assets/family24.jpg';
 import family25 from '../assets/family25.jpg';
 import family26 from '../assets/family26.jpg';
 import family27 from '../assets/family27.jpg';
+
 const photos = [
     family21,
     family22,
@@ -51,72 +50,85 @@ const photos = [
     family20,
     family24,
     family25,
-    family26, 
-    family27
+    family26,
+    family27,
 ];
 
 function FamilyGallery() {
-    const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(null);
+    const [visiblePhotos, setVisiblePhotos] = useState(4); // Initial number of visible photos
+    const [loadedPhotos, setLoadedPhotos] = useState([]);
 
-    const openLightbox = (index) => {
-        setSelectedPhotoIndex(index);
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY + window.innerHeight;
+            const totalHeight = document.documentElement.scrollHeight;
+
+            // If scrolled near the bottom, load the next batch
+            if (scrollPosition >= totalHeight - 20) {
+                loadMorePhotos();
+            }
+        };
+
+        // Attach the scroll event listener
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            // Cleanup the scroll listener
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [visiblePhotos]);
+
+    const loadMorePhotos = () => {
+        if (visiblePhotos < photos.length) {
+            setVisiblePhotos((prev) => Math.min(prev + 4, photos.length)); // Load next batch of 4 photos
+        }
     };
 
-    const closeLightbox = () => {
-        setSelectedPhotoIndex(null);
-    };
-
-    const goToNextPhoto = () => {
-        setSelectedPhotoIndex((prevIndex) =>
-            prevIndex === photos.length - 1 ? 0 : prevIndex + 1
-        );
-    };
-
-    const goToPreviousPhoto = () => {
-        setSelectedPhotoIndex((prevIndex) =>
-            prevIndex === 0 ? photos.length - 1 : prevIndex - 1
-        );
+    const handleImageLoad = (src) => {
+        setLoadedPhotos((prev) => [...prev, src]); // Add to fully loaded list
     };
 
     return (
         <div className="family-gallery">
-            <h1 className="gallery-title">Family & Couple Gallery</h1>
-            <p className="gallSubtext">Visit Other Galleries</p>
+            <div className="gallery-header">
+                <h1 className="gallery-title">Family & Couple Gallery</h1>
+                <p className="gallery-description">
+                    Looking to book your own family or couple session?{' '}
+                    <Link to="/services" className="booking-link">
+                        Click here to view our services.
+                    </Link>
+                </p>
+                <p className="gallery-redirect">
+                    Want to explore more?{' '}
+                    <Link to="/galleries" className="other-galleries-link">
+                        Visit other galleries.
+                    </Link>
+                </p>
+            </div>
 
-            {/* Lazy Load Thumbnails in Grid */}
             <div className="gallery-grid">
-                {photos.map((photo, index) => (
-                    <LazyLoadImage
+                {photos.slice(0, visiblePhotos).map((photo, index) => (
+                    <ImageWithFadeIn
                         key={index}
-                        src={photo} // Thumbnail or preview image
-                        alt={`Family${index + 1}`}
-                        className="gallery-photo"
-                        effect="blur" // Optional: Adds a blur effect while loading
-                        onClick={() => openLightbox(index)} // Open lightbox on click
+                        src={photo}
+                        alt={`Family ${index + 1}`}
+                        onLoad={() => handleImageLoad(photo)}
+                        isLoaded={loadedPhotos.includes(photo)}
                     />
                 ))}
             </div>
-
-            {/* Lightbox with Full-Quality Images */}
-            {selectedPhotoIndex !== null && (
-                <div className="lightbox">
-                    <button className="lightbox-close" onClick={closeLightbox}>
-                        &times;
-                    </button>
-                    <button className="lightbox-arrow left" onClick={goToPreviousPhoto}>
-                        &#8249;
-                    </button>
-                    <img
-                        src={photos[selectedPhotoIndex]} // Full-quality image
-                        alt={`Selected Family${selectedPhotoIndex + 1}`}
-                        className="lightbox-image"
-                    />
-                    <button className="lightbox-arrow right" onClick={goToNextPhoto}>
-                        &#8250;
-                    </button>
-                </div>
-            )}
         </div>
+    );
+}
+
+function ImageWithFadeIn({ src, alt, onLoad, isLoaded }) {
+    return (
+        <img
+            src={src}
+            alt={alt}
+            className={`gallery-photo ${isLoaded ? 'visible' : ''}`}
+            onLoad={onLoad}
+        />
     );
 }
 

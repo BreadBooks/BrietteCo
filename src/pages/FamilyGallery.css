@@ -16,6 +16,24 @@
     text-shadow: black blur 2px 1px 1px;
 }
 
+.gallery-description,
+.gallery-redirect {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #555;
+}
+
+.booking-link,
+.other-galleries-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.booking-link:hover,
+.other-galleries-link:hover {
+    text-decoration: underline;
+}
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Responsive grid */
@@ -38,7 +56,15 @@
     align-items: center;
     justify-content: center;
 }
+.gallery-photo.blurred {
+    filter: blur(20px); /* Blurred placeholder */
+    opacity: 0.7;
+}
 
+.gallery-photo.visible {
+    filter: blur(0);
+    opacity: 1;
+}
 /* Ensure placeholder background shows immediately before image loads */
 .gallery-photo::before {
     content: '';
@@ -129,3 +155,4 @@
 .redirect-button:hover {
     background-color: rgb(136, 176, 189);
 }
+
