@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './ImageGallery.css';
 import graduation from '../assets/graduation.jpg';
 import portrait from '../assets/portrait.jpg';
-import family from '../assets/family.jpg';
+import family from '../assets/family.webp';
 
 function ImageGallery() {
     const images = [
