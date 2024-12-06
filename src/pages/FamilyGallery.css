@@ -155,42 +155,70 @@
 .redirect-button:hover {
     background-color: rgb(136, 176, 189);
 }
-/* Modal styles */
+/* Modal Overlay */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.8); /* Darken the background */
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    padding: 20px; /* Add padding to prevent edge clipping */
     box-sizing: border-box;
 }
 
+/* Modal Content */
 .modal-content {
-    position: relative;
+    position: sticky;
+    top: 20px; /* Keep some space from the top */
+    max-width: 80%; /* Ensure the modal width is constrained */
+    max-height: 90%; /* Constrain modal height to 90% of viewport */
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #0000004d; /* Black background to contrast the image */
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    flex-direction: column; /* For surrounding background images */
+    gap: 20px; /* Add spacing between the focused image and background images */
+    box-sizing: border-box;
+    padding: 20px;
 }
 
+/* Focused Image */
 .modal-photo {
-    padding: 1000;
-    width: auto; /* Keep width dynamic */
-    height: auto; /* Keep height dynamic */
-    max-width: 50%; /* Fit within modal content width */
-    max-height: 40%; /* Fit within modal content height */
-    object-fit: fill; /* Ensure scaling maintains content focus */
+    max-width: 100%; /* Keep the main image smaller */
+    max-height: calc(95vh - 40px); /* Subtract modal padding from viewport height */
+    object-fit: contain; /* Maintain aspect ratio without distortion */
+    border-radius: 8px;
+    margin: auto;
 }
 
+/* Background Images */
+.background-images {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+}
+
+.background-image {
+    max-width: 20%; /* Smaller background images */
+    max-height: 15vh; /* Constrain background image height */
+    object-fit: cover; /* Crop background images proportionally */
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0.7; /* De-emphasize background images */
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.background-image:hover {
+    opacity: 1; /* Highlight on hover */
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Modal Arrows */
 .modal-arrow {
     position: absolute;
     top: 50%;
@@ -210,16 +238,41 @@
     transition: background 0.3s;
 }
 
+.modal-arrow.left {
+    left: -50px;
+}
+
+.modal-arrow.right {
+    right: -50px;
+}
+
 .modal-arrow:hover {
     background: rgba(255, 255, 255, 1);
 }
 
-.modal-arrow.left {
-    left: 10px;
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .modal-content {
+        max-width: 95%;
+        max-height: 85%;
+        padding: 10px;
+    }
+
+    .modal-photo {
+        max-width: 80%; /* Adjust for smaller screens */
+        max-height: calc(85vh - 20px);
+    }
+
+    .background-images {
+        flex-wrap: wrap; /* Wrap background images */
+        gap: 5px;
+    }
+
+    .background-image {
+        max-width: 45%; /* Smaller size for background images on mobile */
+        max-height: 10vh;
+    }
 }
 
-.modal-arrow.right {
-    right: 10px;
-}
 
 
