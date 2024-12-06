@@ -57,6 +57,8 @@ const photos = [
 function FamilyGallery() {
     const [visiblePhotos, setVisiblePhotos] = useState(4); // Initial number of visible photos
     const [loadedPhotos, setLoadedPhotos] = useState([]);
+    const [currentPhoto, setCurrentPhoto] = useState(null); // To track the current photo for modal
+    const [isModalOpen, setIsModalOpen] = useState(false); // To control modal visibility
 
     useEffect(() => {
         const handleScroll = () => {
@@ -88,6 +90,23 @@ function FamilyGallery() {
         setLoadedPhotos((prev) => [...prev, src]); // Add to fully loaded list
     };
 
+    const openModal = (index) => {
+        setCurrentPhoto(index);
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
+    const showPrevious = () => {
+        setCurrentPhoto((prev) => (prev > 0 ? prev - 1 : photos.length - 1));
+    };
+
+    const showNext = () => {
+        setCurrentPhoto((prev) => (prev < photos.length - 1 ? prev + 1 : 0));
+    };
+
     return (
         <div className="family-gallery">
             <div className="gallery-header">
@@ -114,20 +133,40 @@ function FamilyGallery() {
                         alt={`Family ${index + 1}`}
                         onLoad={() => handleImageLoad(photo)}
                         isLoaded={loadedPhotos.includes(photo)}
+                        onClick={() => openModal(index)} // Open modal on click
                     />
                 ))}
             </div>
+
+            {isModalOpen && (
+                <div className="modal-overlay" onClick={closeModal}>
+                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                        <button className="modal-arrow left" onClick={showPrevious}>
+                            &lt;
+                        </button>
+                        <img
+                            src={photos[currentPhoto]}
+                            alt={`Family ${currentPhoto + 1}`}
+                            className="modal-photo"
+                        />
+                        <button className="modal-arrow right" onClick={showNext}>
+                            &gt;
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
 
-function ImageWithFadeIn({ src, alt, onLoad, isLoaded }) {
+function ImageWithFadeIn({ src, alt, onLoad, isLoaded, onClick }) {
     return (
         <img
             src={src}
             alt={alt}
             className={`gallery-photo ${isLoaded ? 'visible' : ''}`}
             onLoad={onLoad}
+            onClick={onClick} // Add click handler
         />
     );
 }
