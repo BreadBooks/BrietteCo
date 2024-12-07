@@ -1,10 +1,8 @@
 import React from 'react';
 import './ServicesPage.css';
-
-// Import SVGs
-import ThirtyMinSession from './assets/svg/30-min-session.svg';
-import OneHourSession from './assets/svg/1hr-session.svg';
-import EventSession from './assets/svg/event-session.svg';
+import ThirtyMinSession from '../assets/svg/30-min-session.svg';
+import OneHourSession from '../assets/svg/1hr-session.svg';
+import EventSession from '../assets/svg/event-session.svg';
 
 function ServicesPage() {
     const services = [
