@@ -1,6 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense} from 'react';
 import './FamilyGallery.css';
 import { Link } from 'react-router-dom';
+import { FixedSizeGrid as Grid } from 'react-window';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
+// const ImageWithFadeIn = lazy(() => import('../components/ImageWithFadeIn'))
 
 import family21 from '../assets/family21.webp';
 import family22 from '../assets/family22.webp';
@@ -26,6 +31,31 @@ import family24 from '../assets/family24.webp';
 import family25 from '../assets/family25.webp';
 import family26 from '../assets/family26.webp';
 import family27 from '../assets/family27.webp';
+
+import family21_low from '../assets/family21_low.webp';
+import family22_low from '../assets/family22_low.webp';
+import family23_low from '../assets/family23_low.webp';
+import family4_low from '../assets/family4_low.webp';
+import family5_low from '../assets/family5_low.webp';
+import family6_low from '../assets/family6_low.webp';
+import family7_low from '../assets/family7_low.webp';
+import family8_low from '../assets/family8_low.webp';
+import family9_low from '../assets/family9_low.webp';
+import family10_low from '../assets/family10_low.webp';
+import family11_low from '../assets/family11_low.webp';
+import family12_low from '../assets/family12_low.webp';
+import family13_low from '../assets/family13_low.webp';
+import family14_low from '../assets/family14_low.webp';
+import family15_low from '../assets/family15_low.webp';
+import family16_low from '../assets/family16_low.webp';
+import family17_low from '../assets/family17_low.webp';
+import family18_low from '../assets/family18_low.webp';
+import family19_low from '../assets/family19_low.webp';
+import family20_low from '../assets/family20_low.webp';
+import family24_low from '../assets/family24_low.webp';
+import family25_low from '../assets/family25_low.webp';
+import family26_low from '../assets/family26_low.webp';
+import family27_low from '../assets/family27_low.webp';
 
 const photos = [
     family21,
@@ -53,6 +83,14 @@ const photos = [
     family26,
     family27,
 ];
+
+// Low resolution images
+const lowResPhotos = [
+    family21_low, family22_low, family23_low, family4_low, family5_low, family6_low, family7_low, family8_low,
+    family9_low, family10_low, family11_low, family12_low, family13_low, family14_low, family15_low, family16_low,
+    family17_low, family18_low, family19_low, family20_low, family24_low, family25_low, family26_low, family27_low
+];
+
 
 function FamilyGallery() {
     const [visiblePhotos, setVisiblePhotos] = useState(4); // Initial number of visible photos
@@ -126,16 +164,19 @@ function FamilyGallery() {
             </div>
 
             <div className="gallery-grid">
-                {photos.slice(0, visiblePhotos).map((photo, index) => (
-                    <ImageWithFadeIn
-                        key={index}
-                        src={photo}
-                        alt={`Family ${index + 1}`}
-                        onLoad={() => handleImageLoad(photo)}
-                        isLoaded={loadedPhotos.includes(photo)}
-                        onClick={() => openModal(index)} // Open modal on click
-                    />
-                ))}
+                <Suspense fallback={<div>Loading images...</div>}>
+                    {photos.slice(0, visiblePhotos).map((photo, index) => (
+                        <ImageWithFadeIn
+                            key={index}
+                            highResSrc={photo}
+                            lowResSrc={photo}
+                            alt={`Family ${index + 1}`}
+                            onLoad={() => handleImageLoad(photo)}
+                            isLoaded={loadedPhotos.includes(photo)}
+                            onClick={() => openModal(index)}
+                        />
+                    ))}
+                </Suspense>
             </div>
 
             {isModalOpen && (
@@ -159,15 +200,18 @@ function FamilyGallery() {
     );
 }
 
-function ImageWithFadeIn({ src, alt, onLoad, isLoaded, onClick }) {
+function ImageWithFadeIn({ highResSrc, lowResSrc, alt, onLoad, isLoaded, onClick }) {
     return (
-        <img
-            src={src}
-            alt={alt}
-            className={`gallery-photo ${isLoaded ? 'visible' : ''}`}
-            onLoad={onLoad}
-            onClick={onClick} // Add click handler
-        />
+      <LazyLoadImage
+        src={ highResSrc }
+        placeholderSrc={ lowResSrc }
+        alt={alt}
+        className={`gallery-photo ${isLoaded ? 'visible' : ''}`}
+        onLoad={onLoad}
+        onClick={onClick}
+        effect="blur" // This adds a blur-up effect while the image is loading
+        // You can optionally add a placeholderSrc prop if you have a custom low-res placeholder image
+      />
     );
 }
 
