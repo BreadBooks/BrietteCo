@@ -69,7 +69,7 @@ function Header() {
                             <div className="nav-left">
                                 <ul>
                                     <li>
-                                        <Link to="/services">Services + Pricing</Link>
+                                        <Link to="/services">Services</Link>
                                     </li>
                                     <li>
                                         <Link to="/galleries">Galleries</Link>
@@ -102,7 +102,7 @@ function Header() {
                             <nav className="navbar">
                                 <ul className="nav-links" style={translateStyle}>
                                     <li>
-                                        <Link to="/services">Services + Pricing</Link>
+                                        <Link to="/services">Services</Link>
                                     </li>
                                     <li>
                                         <Link to="/galleries">Galleries</Link>
