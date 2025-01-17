@@ -9,6 +9,7 @@ import TestimonialsPage from './pages/TestimonialsPage';
 import ContactPage from './pages/ContactPage';
 import FamilyGallery from './pages/FamilyGallery';
 import './App.css';
+import SoloGallery from './pages/SoloGallery';
 
 function App() {
     return (
@@ -40,6 +41,7 @@ function App() {
                     <Route path="/aboutme" element={<TestimonialsPage />} />
                     <Route path="/contact" element={<ContactPage />} />
                     <Route path="/family" element={<FamilyGallery />} />
+                    <Route path="/solo-portraits" element={<SoloGallery />} />
                 </Routes>
             </div>
 

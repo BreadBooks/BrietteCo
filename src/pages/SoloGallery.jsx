@@ -1,0 +1,147 @@
+import React, { useState, useEffect, lazy, Suspense } from 'react';
+import './SoloGallery.css';
+import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
+import solo1 from '../assets/solo1.webp';
+import solo2 from '../assets/solo2.webp';
+import solo3 from '../assets/solo3.webp';
+import solo4 from '../assets/solo4.webp';
+import solo5 from '../assets/solo5.webp';
+import solo6 from '../assets/solo6.webp';
+import solo7 from '../assets/solo7.webp';
+import solo8 from '../assets/solo8.webp';
+
+const photos = [
+    solo1,
+    solo2,
+    solo3,
+    solo4,
+    solo5,
+    solo6,
+    solo7,
+    solo8,
+];
+
+function SoloGallery() {
+    const [visiblePhotos, setVisiblePhotos] = useState(4); // Initial number of visible photos
+    const [loadedPhotos, setLoadedPhotos] = useState([]);
+    const [currentPhoto, setCurrentPhoto] = useState(null); // To track the current photo for modal
+    const [isModalOpen, setIsModalOpen] = useState(false); // To control modal visibility
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY + window.innerHeight;
+            const totalHeight = document.documentElement.scrollHeight;
+
+            // If scrolled near the bottom, load the next batch
+            if (scrollPosition >= totalHeight - 20) {
+                loadMorePhotos();
+            }
+        };
+
+        // Attach the scroll event listener
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            // Cleanup the scroll listener
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [visiblePhotos]);
+
+    const loadMorePhotos = () => {
+        if (visiblePhotos < photos.length) {
+            setVisiblePhotos((prev) => Math.min(prev + 4, photos.length)); // Load next batch of 4 photos
+        }
+    };
+
+    const handleImageLoad = (src) => {
+        setLoadedPhotos((prev) => [...prev, src]); // Add to fully loaded list
+    };
+
+    const openModal = (index) => {
+        setCurrentPhoto(index);
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
+    const showPrevious = () => {
+        setCurrentPhoto((prev) => (prev > 0 ? prev - 1 : photos.length - 1));
+    };
+
+    const showNext = () => {
+        setCurrentPhoto((prev) => (prev < photos.length - 1 ? prev + 1 : 0));
+    };
+
+    return (
+        <div className="solo-gallery">
+            <div className="gallery-header">
+                <h1 className="gallery-title">Solo Portrait Gallery</h1>
+                <p className="gallery-description">
+                    Looking to book your own solo portrait session?{' '}
+                    <Link to="/services" className="booking-link">
+                        Click here to view our services.
+                    </Link>
+                </p>
+                <p className="gallery-redirect">
+                    Want to explore more?{' '}
+                    <Link to="/galleries" className="other-galleries-link">
+                        Visit other galleries.
+                    </Link>
+                </p>
+            </div>
+
+            <div className="gallery-grid">
+                <Suspense fallback={<div>Loading images...</div>}>
+                    {photos.slice(0, visiblePhotos).map((photo, index) => (
+                        <ImageWithFadeIn
+                            key={index}
+                            highResSrc={photo}
+                            alt={`Solo ${index + 1}`}
+                            onLoad={() => handleImageLoad(photo)}
+                            isLoaded={loadedPhotos.includes(photo)}
+                            onClick={() => openModal(index)}
+                        />
+                    ))}
+                </Suspense>
+            </div>
+
+            {isModalOpen && (
+                <div className="modal-overlay" onClick={closeModal}>
+                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                        <button className="modal-arrow left" onClick={showPrevious}>
+                            &lt;
+                        </button>
+                        <img
+                            src={photos[currentPhoto]}
+                            alt={`Solo ${currentPhoto + 1}`}
+                            className="modal-photo"
+                        />
+                        <button className="modal-arrow right" onClick={showNext}>
+                            &gt;
+                        </button>
+                    </div>
+                </div>
+            )}
+        </div>
+    );
+}
+
+function ImageWithFadeIn({ highResSrc, alt, onLoad, isLoaded, onClick }) {
+    return (
+        <LazyLoadImage
+            src={highResSrc}
+            alt={alt}
+            className={`gallery-photo ${isLoaded ? 'visible' : ''}`}
+            onLoad={onLoad}
+            onClick={onClick}
+            effect="blur" 
+        />
+    );
+}
+
+export default SoloGallery;
