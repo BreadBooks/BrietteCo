@@ -19,7 +19,7 @@ function App() {
                 <Header />
                 
                 <Routes>
-                    {/* Home Route */}
+                    
                    
                     <Route path="/" element={
                         <>

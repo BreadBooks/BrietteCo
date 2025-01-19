@@ -17,7 +17,7 @@ function ImageGallery() {
             src: portrait,
             title: 'Portraits',
             description: 'Personalized portrait sessions',
-            link: '/portraits', // URL to redirect to portraits page
+            link: '/solo-portraits', // URL to redirect to portraits page
         },
         {
             src: family,
