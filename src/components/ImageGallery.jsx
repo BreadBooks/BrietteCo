@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './ImageGallery.css';
-import graduation from '../assets/graduation.jpg';
-import portrait from '../assets/portrait.jpg';
-import family from '../assets/family.webp';
+import graduation from '../assets/svg/Graduation.svg';
+import family from '../assets/svg/family.svg';
+import wedding from '../assets/svg/wedding.svg';
+import solo from '../assets/svg/solo.svg';
+import couples from '../assets/svg/couples.svg'
 
 function ImageGallery() {
     const images = [
@@ -11,19 +13,31 @@ function ImageGallery() {
             src: graduation, 
             title: 'Graduation',
             description: 'Celebrate your achievements',
-            link: '/graduation', // URL to redirect to graduation page
-        },
-        {
-            src: portrait,
-            title: 'Portraits',
-            description: 'Personalized portrait sessions',
-            link: '/solo-portraits', // URL to redirect to portraits page
+            link: '/graduation',
         },
         {
             src: family,
             title: 'Family & Couples',
             description: 'Capture family moments',
-            link: '/family', // URL to redirect to family page
+            link: '/family',
+        },
+        {
+            src: wedding,
+            title: 'Weddings & Events',
+            description: 'Document treasured memories',
+            link: '/weddings',
+        },
+        {
+            src: solo,
+            title: 'Solo Portraits',
+            description: 'Lifestyle or Professional photos for work or socials',
+            link: '/solo-portraits',
+        },
+        {
+            src: couples,
+            title: 'Events',
+            description: 'Anniversary, Engagements, or just because!',
+            link: '/couples',
         },
     ];
 

@@ -1,22 +1,22 @@
-/* src/components/ImageGallery.css */
 .image-gallery {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
+    grid-auto-rows: 1fr; /* Ensure consistent row height */
+    gap: 30px; /* Increase space between cards */
+    justify-items: center; /* Center cards horizontally */
+    align-items: stretch; /* Stretch items to fill row height */
     padding: 20px;
-    align-items: center;
 }
 
 .gallery-item {
     position: relative;
-    width: 100%; /* Make each item take full width */
-    max-width: 400px; /* Set a maximum width to control the size */
-    margin: 10px;
+    width: 100%; /* Let it fill the grid cell */
+    max-width: 450px; /* Increase the size of the cards */
+    aspect-ratio: 3/4; /* Ensure consistent aspect ratio */
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.3s ease;
-    border-radius: 8px; /* Optional: rounded corners */
+    border-radius: 16px; /* Increase border radius for rounded corners */
 }
 
 .gallery-item:hover {
@@ -24,14 +24,15 @@
 }
 
 .gallery-image {
-    width: 100%; /* Make the image fill its container width */
-    height: auto; /* Maintain original aspect ratio */
-    object-fit: cover; /* Ensure image covers area */
+    width: 100%; /* Fill the container width */
+    height: 100%; /* Fill the container height */
+    object-fit: cover; /* Prevent image distortion */
+    pointer-events: visiblePainted; /* Apply hover only to non-transparent areas */
     transition: transform 0.3s ease;
 }
 
 .gallery-item:hover .gallery-image {
-    transform: scale(1.05); /* Slight zoom on hover */
+    transform: scale(1.1); /* Slight zoom on hover */
 }
 
 .overlay {
@@ -56,11 +57,11 @@
 
 .overlay h3 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.8rem; /* Larger title */
     text-transform: uppercase;
 }
 
 .overlay p {
-    margin: 5px 0 0;
-    font-size: 1rem;
+    margin: 10px 0 0;
+    font-size: 1.2rem; /* Larger description */
 }
