@@ -60,15 +60,15 @@ body, html {
 }
 
 .nav-links li a:hover {
-    color: rgb(129, 224, 255); /* Light blue color on hover */
+    color: rgb(129, 224, 255); 
 }
 
 .nav-left ul li a:hover {
-    color: rgb(129, 224, 255);
+    color: #f1f1f1;
 }
 
 .nav-right ul li a:hover {
-    color: rgb(129, 224, 255);
+    color: #f1f1f1;
 }
 
 /* Compact Header Specific Styles */
@@ -84,7 +84,7 @@ body, html {
 
 .header.background-active {
     transition: background-color 0.5s ease; /* Smooth background color transition */
-    background-color: #add8e6; 
+    background-color: #add8e6; /* Darker background in compact mode */
 }
 
 .compact-content {
@@ -143,12 +143,13 @@ body, html {
 
 
 .nav-left ul li a, .nav-right ul li a {
-    color: white;
+    color: #475e65;
     font-weight: bold;
     text-transform: uppercase;
     transition: color 0.3s ease;
     text-decoration: none;
 }
+
 
 /* Initial state before entering */
 .header-transition-enter {
