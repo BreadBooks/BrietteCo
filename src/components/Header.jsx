@@ -3,6 +3,7 @@ import { useLocation, Link } from 'react-router-dom';
 import './Header.css';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import logo from '../assets/logo.png';
+import logoalt from '../assets/logoalt.svg';
 
 function Header() {
     const location = useLocation();
@@ -78,7 +79,7 @@ function Header() {
                             </div>
                             <div className="logo">
                                 <Link to="/">
-                                    <img src={logo} alt="Logo" />
+                                    <img src={logoalt} alt="Logoalt" />
                                 </Link>
                             </div>
                             <div className="nav-right">
