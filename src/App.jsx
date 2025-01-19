@@ -10,6 +10,7 @@ import ContactPage from './pages/ContactPage';
 import FamilyGallery from './pages/FamilyGallery';
 import './App.css';
 import SoloGallery from './pages/SoloGallery';
+import GraduationGallery from './pages/GraduationGallery';
 
 function App() {
     return (
@@ -42,6 +43,7 @@ function App() {
                     <Route path="/contact" element={<ContactPage />} />
                     <Route path="/family" element={<FamilyGallery />} />
                     <Route path="/solo-portraits" element={<SoloGallery />} />
+                    <Route path="/graduation" element={<GraduationGallery/>} />
                 </Routes>
             </div>
 
