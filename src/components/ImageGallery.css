@@ -1,38 +1,48 @@
 .image-gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
-    grid-auto-rows: 1fr; /* Ensure consistent row height */
-    gap: 30px; /* Increase space between cards */
-    justify-items: center; /* Center cards horizontally */
-    align-items: stretch; /* Stretch items to fill row height */
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 30px;
+    justify-items: center;
+    align-items: stretch;
     padding: 20px;
 }
 
 .gallery-item {
     position: relative;
-    width: 100%; /* Let it fill the grid cell */
-    max-width: 450px; /* Increase the size of the cards */
-    aspect-ratio: 3/4; /* Ensure consistent aspect ratio */
+    width: 100%;
+    max-width: 450px;
+    aspect-ratio: 3/4;
     overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    border-radius: 16px; /* Increase border radius for rounded corners */
+    border-radius: 16px;
 }
 
-.gallery-item:hover {
-    transform: scale(1.05); /* Slight pop-out effect */
-}
-
+/* Stack images on top of each other */
 .gallery-image {
-    width: 100%; /* Fill the container width */
-    height: 100%; /* Fill the container height */
-    object-fit: cover; /* Prevent image distortion */
-    pointer-events: visiblePainted; /* Apply hover only to non-transparent areas */
-    transition: transform 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    transition: opacity 0.3s ease;
 }
 
-.gallery-item:hover .gallery-image {
-    transform: scale(1.1); /* Slight zoom on hover */
+/* Initially show default image, hide hover image */
+.gallery-image.hover {
+    opacity: 0;
+}
+.gallery-image.default {
+    opacity: 1;
+}
+
+/* On hover, swap images */
+.gallery-item:hover .gallery-image.default {
+    opacity: 0;
+}
+.gallery-item:hover .gallery-image.hover {
+    opacity: 1;
 }
 
 .overlay {
@@ -41,27 +51,40 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;  /* Center the text horizontally */
+
+    /* Start hidden */
     opacity: 0;
     transition: opacity 0.3s ease;
+
+     /* Add padding and ensure box sizing */
+     padding: 2rem;               /* Adjust padding value as needed */
+     box-sizing: border-box;      /* Include padding in width/height */
 }
 
 .gallery-item:hover .overlay {
-    opacity: 1; /* Show overlay on hover */
+    opacity: 1;
 }
 
-.overlay h3 {
-    margin: 0;
-    font-size: 1.8rem; /* Larger title */
+/* Adjust heading size and spacing */
+.overlay h2 {
+    margin: 0.5rem 0;        /* Adjust margin as needed */
+    font-size: 1.2rem;       /* Smaller font size */
+    line-height: 1.2;        /* Reduce line height for closer lines */
     text-transform: uppercase;
 }
 
+/* Style paragraphs similarly (if needed) */
 .overlay p {
-    margin: 10px 0 0;
-    font-size: 1.2rem; /* Larger description */
+    margin: 0.5rem 0;       /* Adjust margin for spacing */
+    font-size: 1rem;        /* Smaller font size for paragraphs */
+    line-height: 1.2;       /* Tighter line spacing */
+    text-align: center;     /* Ensure centered text */
+    word-wrap: break-word;  /* Wrap text if necessary */
+    max-width: 90%;         /* Limit width to encourage wrapping */
 }
