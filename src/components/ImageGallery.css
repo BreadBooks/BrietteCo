@@ -1,28 +1,40 @@
 .image-gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
-    grid-auto-rows: 1fr; /* Ensure consistent row height */
-    gap: 30px; /* Increase space between cards */
-    justify-items: center; /* Center cards horizontally */
-    align-items: stretch; /* Stretch items to fill row height */
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    grid-template-rows: auto auto; /* Two rows */
+    gap: 30px; /* Space between items */
+    justify-content: center; /* Center items horizontally */
     padding: 20px;
 }
 
+/* Adjust the bottom two cards */
+.gallery-item:nth-last-child(2),
+.gallery-item:nth-last-child(1) {
+    grid-column: span 1; /* Take up one column */
+    justify-self: center; /* Center-align the cards */
+}
+
+.gallery-item:nth-last-child(2) {
+    grid-column: 2 / 3; /* Position the second-to-last card in the middle column */
+}
+
+.gallery-item:nth-last-child(1) {
+    grid-column: 3 / 4; /* Position the last card in the right column */
+}
+
+/* Card Styling */
 .gallery-item {
     position: relative;
-    width: 100%; /* Let it fill the grid cell */
-    max-width: 450px; /* Increase the size of the cards */
-    aspect-ratio: 3/4; /* Ensure consistent aspect ratio */
+    width: 100%; /* Take full width of the grid column */
+    max-width: 300px; /* Consistent size */
+    aspect-ratio: 3 / 4; /* Maintain aspect ratio */
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.3s ease;
-    border-radius: 16px; /* Increase border radius for rounded corners */
+    border-radius: 16px; /* Rounded corners */
 }
 
-.gallery-item:hover {
-    transform: scale(1.05); /* Slight pop-out effect */
-}
-
+/* Image Styling */
 .gallery-image {
     width: 100%; /* Fill the container width */
     height: 100%; /* Fill the container height */
@@ -35,6 +47,7 @@
     transform: scale(1.1); /* Slight zoom on hover */
 }
 
+/* Overlay Styling */
 .overlay {
     position: absolute;
     top: 0;
@@ -62,6 +75,5 @@
 }
 
 .overlay p {
-    margin: 10px 0 0;
     font-size: 1.2rem; /* Larger description */
 }

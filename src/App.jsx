@@ -8,45 +8,42 @@ import GalleriesPage from './pages/GalleriesPage';
 import TestimonialsPage from './pages/TestimonialsPage';
 import ContactPage from './pages/ContactPage';
 import FamilyGallery from './pages/FamilyGallery';
-import './App.css';
 import SoloGallery from './pages/SoloGallery';
 import GraduationGallery from './pages/GraduationGallery';
+import ParallaxBackground from './components/ParallaxBackground'; // Import the new component
+import './App.css';
 
 function App() {
     return (
         <Router>
             <div className="App">
                 <Header />
-                
                 <Routes>
-                    
-                   
                     <Route path="/" element={
                         <>
-                        <div className="background-container">
-                        </div>
-                            <section className="hero-section">
-                            </section>
+                          {/* Use the ParallaxBackground component */}
+                          <ParallaxBackground />
+                          
+                          <section className="hero-section">
+                          </section>
 
-                            <section className="content-section">
-                                <div className="gallery">
-                                    <ImageGallery />
-                                </div>
-                            </section>
+                          <section className="content-section">
+                              <div className="gallery">
+                                  <ImageGallery />
+                              </div>
+                          </section>
                         </>
                     } />
-
-                    {/* Page Routes */}
+                    {/* Other routes */}
                     <Route path="/services" element={<ServicesPage />} />
                     <Route path="/galleries" element={<GalleriesPage />} />
                     <Route path="/aboutme" element={<TestimonialsPage />} />
                     <Route path="/contact" element={<ContactPage />} />
                     <Route path="/family" element={<FamilyGallery />} />
                     <Route path="/solo-portraits" element={<SoloGallery />} />
-                    <Route path="/graduation" element={<GraduationGallery/>} />
+                    <Route path="/graduation" element={<GraduationGallery />} />
                 </Routes>
             </div>
-
         </Router>
     );
 }
