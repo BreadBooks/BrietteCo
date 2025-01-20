@@ -11,20 +11,13 @@ function Header() {
     const [applyDelay, setApplyDelay] = useState(false);
     const [scrollOffset, setScrollOffset] = useState(0); // Track scroll position for translation
     const [backgroundReady, setBackgroundReady] = useState(false); // Track when to apply background color
-    const [logoOpacity, setLogoOpacity] = useState(1); // New state for logo opacity
 
     useEffect(() => {
         const handleScroll = () => {
             if (location.pathname === '/') {
                 // Only apply scroll behavior on the home page
-                const currentScrollY = window.scrollY;
-                setScrollOffset(Math.min(currentScrollY, 350)); // Limit the offset to 350px (or isCompact trigger)
-                setIsCompact(currentScrollY > 350);
-
-                // Calculate and set opacity for the big logo
-                const maxScroll = 300; // Adjust the scroll range for full fade-out
-                const newLogoOpacity = Math.max(0, 1 - currentScrollY / maxScroll);
-                setLogoOpacity(newLogoOpacity);
+                setScrollOffset(Math.min(window.scrollY, 350)); // Limit the offset to 350px (or isCompact trigger)
+                setIsCompact(window.scrollY > 350);
             }
         };
 
@@ -34,7 +27,6 @@ function Header() {
             // Force compact header on other pages
             setIsCompact(true);
             setScrollOffset(0); // Reset translation when on other pages
-            setLogoOpacity(1);   // Reset logo opacity when navigating away
         }
 
         return () => {
@@ -61,15 +53,19 @@ function Header() {
     };
 
     return (
-        <>
-            <header className={`header compact`}>
-                <SwitchTransition>
-                    <CSSTransition
-                        key={'compact'}
-                        timeout={100}
-                        classNames="header-transition"
-                        unmountOnExit
-                    >
+        <header
+            className={`header ${isCompact ? 'compact' : ''} ${applyDelay ? 'compact-delay' : ''} ${
+                backgroundReady ? 'background-active' : ''
+            }`}
+        >
+            <SwitchTransition>
+                <CSSTransition
+                    key={isCompact ? 'compact' : 'full'}
+                    timeout={100}
+                    classNames="header-transition"
+                    unmountOnExit
+                >
+                    {isCompact ? (
                         <div className="header-content compact-content">
                             <div className="nav-left">
                                 <ul>
@@ -97,17 +93,34 @@ function Header() {
                                 </ul>
                             </div>
                         </div>
-                    </CSSTransition>
-                </SwitchTransition>
-            </header>
-            {/* Apply inline style for opacity transition */}
-            <img
-                src={logo}
-                alt="big-logo"
-                className="big-logo"
-                style={{ opacity: logoOpacity }}
-            />
-        </>
+                    ) : (
+                        <div className="header-content">
+                            <div className="logo">
+                                <Link to="/">
+                                    <img src={logo} alt="Logo" />
+                                </Link>
+                            </div>
+                            <nav className="navbar">
+                                <ul className="nav-links" style={translateStyle}>
+                                    <li>
+                                        <Link to="/services">Services</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/galleries">Galleries</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/aboutme">About Me</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/contact">Contact</Link>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    )}
+                </CSSTransition>
+            </SwitchTransition>
+        </header>
     );
 }
 
