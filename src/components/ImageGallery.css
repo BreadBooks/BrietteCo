@@ -1,12 +1,18 @@
 .image-gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    /* 
+       - `auto-fit` creates as many columns as fit.
+       - `minmax(300px, 1fr)` sets a minimum column width and lets the column grow.
+       Adjust the `300px` to the minimum width you prefer for a card.
+    */
     grid-auto-rows: 1fr;
     gap: 30px;
     justify-items: center;
     align-items: stretch;
     padding: 20px;
 }
+
 
 .gallery-item {
     position: relative;
