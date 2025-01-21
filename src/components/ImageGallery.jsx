@@ -12,41 +12,42 @@ import soloHover from '../assets/svg/SoloBW.svg';
 import couples from '../assets/svg/couples.svg';
 import couplesHover from '../assets/svg/CouplesBW.svg';
 
+
 function ImageGallery() {
     const images = [
         {
             src: graduation,
             hoverSrc: graduationHover,
-            title: 'Graduation Photos',
+            title: 'GRADUATION PHOTOS',
             description: 'Celebrate your achievements',
             link: '/graduation',
         },
         {
             src: family,
             hoverSrc: familyHover,
-            title: 'Family Photos',
+            title: 'FAMILY PHOTOS',
             description: 'Capture family moments',
             link: '/family',
         },
         {
             src: wedding,
             hoverSrc: weddingHover,
-            title: 'Weddings & Events',
+            title: 'WEDDINGS & EVENTS',
             description: 'Document treasured memories',
             link: '/weddings',
         },
         {
             src: solo,
             hoverSrc: soloHover,
-            title: 'Solo Portraits',
-            description: 'Lifestyle or Professional photos for work or socials',
+            title: 'SOLO PORTRAITS',
+            description: 'Professional photos for     work or socials',
             link: '/solo-portraits',
         },
         {
             src: couples,
             hoverSrc: couplesHover,
-            title: 'Couples Shoot',
-            description: 'Anniversary, Engagements, or just because!',
+            title: 'COUPLES SHOOT',
+            description: 'Anniversary, Engagements, or  just because!',
             link: '/couples',
         },
     ];

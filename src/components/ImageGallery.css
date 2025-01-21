@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@1&family=Hubballi&family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Pacifico&family=Playwrite+US+Modern:wght@100..400&display=swap');
 .image-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
@@ -62,35 +63,42 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;  /* Center the text horizontally */
-
-    /* Start hidden */
+    text-align: center;
+    font-family: "Hubballi", serif;
+    font-weight: 900;
+    font-style: italic;
     opacity: 0;
     transition: opacity 0.3s ease;
-
-     /* Add padding and ensure box sizing */
-     padding: 2rem;               /* Adjust padding value as needed */
-     box-sizing: border-box;      /* Include padding in width/height */
+    padding: 2rem;
+    box-sizing: border-box;
+    font-size: 21px;
+    /* Add text shadow */
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
 }
+
 
 .gallery-item:hover .overlay {
+    font-family: "Hubballi", serif;
+    font-weight: 900;
+    font-style: italic;
     opacity: 1;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Adjust heading size and spacing */
+
 .overlay h2 {
-    margin: 0.5rem 0;        /* Adjust margin as needed */
-    font-size: 1.2rem;       /* Smaller font size */
-    line-height: 1.2;        /* Reduce line height for closer lines */
+    margin: 0.5rem 0;        
+    font-size: 1.2rem;       
     text-transform: uppercase;
 }
 
-/* Style paragraphs similarly (if needed) */
+
 .overlay p {
-    margin: 0.5rem 0;       /* Adjust margin for spacing */
-    font-size: 1rem;        /* Smaller font size for paragraphs */
-    line-height: 1.2;       /* Tighter line spacing */
-    text-align: center;     /* Ensure centered text */
-    word-wrap: break-word;  /* Wrap text if necessary */
-    max-width: 90%;         /* Limit width to encourage wrapping */
+    margin: 0.2rem 0;       
+    font-size: 1.05rem;        
+    line-height: 1.0;       
+    text-align: center;    
+    word-wrap: normal;  
+    max-width: 90%;         
+    
 }
