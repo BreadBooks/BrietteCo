@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import ImageGallery from './components/ImageGallery';
+import WelcomeSection from './components/WelcomeSection';
 import ServicesPage from './pages/ServicesPage';
 import GalleriesPage from './pages/GalleriesPage';
 import TestimonialsPage from './pages/TestimonialsPage';
@@ -21,12 +22,12 @@ function App() {
                 <Routes>
                     
                    
-                    <Route path="/" element={
+                <Route path="/" element={
                         <>
-                        <div className="background-container">
-                        </div>
-                            <section className="hero-section">
-                            </section>
+                        
+                            
+                            {/* Welcome Section */}
+                            <WelcomeSection />
 
                             <section className="content-section">
                                 <div className="gallery">

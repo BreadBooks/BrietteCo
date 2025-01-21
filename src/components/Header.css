@@ -3,7 +3,6 @@ body, html {
     margin: 0;
 }
 
-/* Main header styles */
 .header {
     width: 100%;
     position: fixed;
@@ -12,8 +11,11 @@ body, html {
     z-index: 1000;
     padding: 20px;
     text-align: center;
-    transition: ease-in-out 2s pink;
-
+    background-image: url("../src/assets/image13.jpg");
+    background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      filter: grayscale(100%); /* Apply grayscale only to background */
 }
 
 
@@ -27,7 +29,6 @@ body, html {
 .logo img {
     max-width: 600px;
     height: fit-content;
-    transition: max-width 1s ease; /* Smoothly resize over 1 second */
 
 }
 
@@ -53,7 +54,6 @@ body, html {
     text-decoration: none;
     color: rgb(231, 231, 231); /* Original link color */
     text-transform: uppercase;
-    transition: color 0.3s ease; /* Smooth transition for color change */
     letter-spacing: 0.4cap;
     font-weight: bold;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.418);
@@ -80,10 +80,12 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #add8e6; /* Darker background in compact mode */
+    background-image: none;
+    filter: none;
 }
 
 .header.background-active {
-    transition: background-color 0.5s ease; /* Smooth background color transition */
     background-color: #add8e6; /* Darker background in compact mode */
 }
 
@@ -146,33 +148,5 @@ body, html {
     color: #475e65;
     font-weight: bold;
     text-transform: uppercase;
-    transition: color 0.3s ease;
     text-decoration: none;
-}
-
-
-/* Initial state before entering */
-.header-transition-enter {
-    opacity: 0;
-    transform: translateY(-20px) scale(0.95); /* Slide up and shrink slightly */
-}
-
-/* Active state while entering */
-.header-transition-enter-active {
-    opacity: 1;
-    transform: translateY(0) scale(1); /* Slide to position and resize to normal */
-    transition: opacity .4s ease, transform .4s ease;
-}
-
-/* Initial state before exiting */
-.header-transition-exit {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-}
-
-/* Active state while exiting */
-.header-transition-exit-active {
-    opacity: 0;
-    transform: translateY(-20px) scale(0.95); /* Slide up and shrink slightly */
-    transition: opacity .05s ease, transform .05s ease;
 }
