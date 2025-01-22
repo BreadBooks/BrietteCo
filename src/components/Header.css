@@ -1,15 +1,11 @@
-body, html {
-    height: 100%;
-    margin: 0;
-}
 
 .header {
     width: 100%;
+    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000;
-    padding: 20px;
+    z-index: 1;
     text-align: center;
     background-image: url("../src/assets/image13.jpg");
     background-size: cover;
@@ -83,6 +79,7 @@ body, html {
     background-color: #add8e6; /* Darker background in compact mode */
     background-image: none;
     filter: none;
+    height: 10%;
 }
 
 .header.background-active {
@@ -150,3 +147,27 @@ body, html {
     text-transform: uppercase;
     text-decoration: none;
 }
+
+/* Fade and Slide-Up Effect */
+.header-transition-enter {
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly lower */
+  }
+  
+  .header-transition-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms ease-out, transform 300ms ease-out;
+  }
+  
+  .header-transition-exit {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .header-transition-exit-active {
+    opacity: 0;
+    transform: translateY(-20px); /* Slide up when exiting */
+    transition: opacity 300ms ease-out, transform 300ms ease-out;
+  }
+  

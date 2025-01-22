@@ -1,87 +1,13 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color: #dddee2;
+  background-color: #dddee2;
 }
 
-.background-container {
-  z-index: 50;
-  flex: 1;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top:0;
-  left: 0;
-  background-image: url("../src/assets/image13.jpg");
-  background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    filter: grayscale(100%); /* Apply grayscale only to background */
-}
-
-.card {
-  padding: 2em;
-}
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-/* Full-Screen Hero Section */
-.hero-section {
-  height: 100vh; /* Full viewport height */
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
-  position: relative;
-  z-index: -1;
-}
-
-/* Hero content styles */
-.hero-content h1 {
-  font-size: 3rem;
-  margin: 0;
-  color: white;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-/* White Content Section */
-.content-section {
-  background-color: white;
-  padding: 50px 20px;
-  min-height: 100vh;
-}
-
-/* Style for gallery text */
-.gallery h2 {
-  text-align: center;
-  margin-bottom: 20px;
+.App {
+  background-color: #dddee2;
 }
 
 

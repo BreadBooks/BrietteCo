@@ -1,34 +1,6 @@
 .welcome-section {
-    display: flex;
-    flex-wrap: wrap; 
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .welcome-image,
-  .welcome-text {
-    flex: 1 1 45%; 
-    box-sizing: border-box;
-  }
-
-  .welcome-image img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .welcome-text {
-    font-family: Arial, sans-serif;
-    text-align: left;
-    padding: 10px;
-  }
-  
-  .welcome-text h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  .welcome-text p {
-    margin-bottom: 1rem;
-    line-height: 1.5;
-  }
-  
+  background: url('../assets/welcome-image.svg') no-repeat center center/cover;
+  width: auto;
+  height: 105vh; /* full viewport height */
+  z-index: 2;
+}

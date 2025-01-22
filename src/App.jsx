@@ -2,6 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
+import Hero from './components/Hero'; 
 import ImageGallery from './components/ImageGallery';
 import WelcomeSection from './components/WelcomeSection';
 import ServicesPage from './pages/ServicesPage';
@@ -25,7 +26,7 @@ function App() {
                 <Route path="/" element={
                         <>
                         
-                            
+                        <Hero />
                             {/* Welcome Section */}
                             <WelcomeSection />
 
