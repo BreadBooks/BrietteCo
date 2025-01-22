@@ -1,6 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@1&family=Hubballi&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Pacifico&family=Playwrite+US+Modern:wght@100..400&display=swap');
 .welcome-section {
   background: url('../assets/welcome-image.svg') no-repeat center center/cover;
   width: auto;
   height: 105vh; /* full viewport height */
-  z-index: 2;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+}
+
+.welcome-text {
+  max-width: 700px;
+  color: #fff; /* White text for contrast */
+  padding: 1rem;
+  margin-right: 6%;
+  text-align: center; 
+  font-family: "Josefin Slab", serif;
+}
+
+.welcome-text h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: #364a50;
+}
+
+.welcome-text p {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  color: #364a50;
+}
+
+.contact-link {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #fff;
+  font-style: italic; /* Makes the whole sentence italicized */
+}
+
+.contact-link-text {
+  color: #f9a825; /* A bright, attention-grabbing color */
+  text-decoration: none;
+  font-weight: bold;
+  font-style: italic; /* Ensures the clickable text is also italicized */
+  color:#364a50;
+}
+
+.contact-link-text:hover {
+  text-decoration: underline;
+  color: #69b7c2; /* A slightly lighter shade for hover effect */
 }
