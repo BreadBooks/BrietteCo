@@ -20,14 +20,20 @@ function Hero() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+ 
   return (
     <section className={`hero ${hideHero ? 'hide' : ''}`}>
       <div className="hero-content">
         <Link to="/">
           <img src={logo} alt="Logo" className="hero-logo" />
         </Link>
-        {/* Add navigation or other hero content here if desired */}
       </div>
+      <nav className="hero-navigation">
+        <Link to="/services" className="nav-link">Services</Link>
+        <Link to="/galleries" className="nav-link">Galleries</Link>
+        <Link to="/about-me" className="nav-link">About Me</Link>
+        <Link to="/contact" className="nav-link">Contact</Link>
+      </nav>
     </section>
   );
 }
