@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Hero from './components/Hero'; 
 import ImageGallery from './components/ImageGallery';
 import WelcomeSection from './components/WelcomeSection';
+import MomentsSection from './components/MomentsSection';
 import ServicesPage from './pages/ServicesPage';
 import GalleriesPage from './pages/GalleriesPage';
 import TestimonialsPage from './pages/TestimonialsPage';
@@ -35,6 +36,7 @@ function App() {
                                     <ImageGallery />
                                 </div>
                             </section>
+                            <MomentsSection />
                         </>
                     } />
 
