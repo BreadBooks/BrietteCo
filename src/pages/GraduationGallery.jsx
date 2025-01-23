@@ -12,6 +12,14 @@ import grad5 from '../assets/grad5.webp';
 import grad6 from '../assets/grad6.webp';
 import grad7 from '../assets/grad7.webp';
 import grad8 from '../assets/grad8.webp';
+import grad9 from '../assets/grad9.webp';
+import grad10 from '../assets/grad10.webp';
+import grad11 from '../assets/grad11.webp';
+import grad12 from '../assets/grad12.webp';
+import grad13 from '../assets/grad13.webp';
+import grad14 from '../assets/grad14.webp';
+import grad15 from '../assets/grad15.webp';
+import grad16 from '../assets/grad16.webp';
 
 const photos = [
     grad1,
@@ -22,6 +30,14 @@ const photos = [
     grad6,
     grad7,
     grad8,
+    grad9,
+    grad10,
+    grad11,
+    grad12,
+    grad13,
+    grad14,
+    grad15,
+    grad16,
 ];
 
 function GraduationGallery() {
