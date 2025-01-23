@@ -5,8 +5,6 @@ import graduation from '../assets/svg/Graduation.svg';
 import graduationHover from '../assets/svg/GraduationBW.svg';
 import family from '../assets/svg/family.svg';
 import familyHover from '../assets/svg/FamilyBW.svg';
-import wedding from '../assets/svg/wedding.svg';
-import weddingHover from '../assets/svg/WeddingBW.svg';
 import solo from '../assets/svg/solo.svg';
 import soloHover from '../assets/svg/SoloBW.svg';
 import couples from '../assets/svg/couples.svg';
