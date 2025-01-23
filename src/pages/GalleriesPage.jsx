@@ -5,11 +5,11 @@ import './GalleriesPage.css';
 import GraduationCarousel from '../components/GraduationCarousel';
 import SoloPortraitCarousel from '../components/SoloPortraitCarousel';
 import FamilyCarousel from '../components/FamilyCarousel';
-
+import CouplesCarousel from '../components/CoupleCarousel';
 function GalleriesPage() {
     const galleryData = [
         {
-            title: 'Graduation',
+            title: 'Graduation Photos',
             description: 'Celebrate your academic achievements with a memorable graduation photoshoot.',
             link: '/graduation',
             carousel: <GraduationCarousel />,
@@ -21,10 +21,16 @@ function GalleriesPage() {
             carousel: <SoloPortraitCarousel />,
         },
         {
-            title: 'Family & Couples',
-            description: 'Cherish your special moments with family and couple photography.',
+            title: 'Family Photos',
+            description: 'Cherish special memories with family',
             link: '/family',
             carousel: <FamilyCarousel />,
+        },
+        {
+            title: 'Couple Photos',
+            description: 'Capture your love with your life partner!',
+            link: '/couples',
+            carousel: <CouplesCarousel />,
         },
     ];
 
@@ -40,7 +46,7 @@ function GalleriesPage() {
                             <h2>{gallery.title}</h2>
                             <p>{gallery.description}</p>
                             <Link to={gallery.link} className="gallery-link">
-                                See More {gallery.title} Photos
+                                See More {gallery.title}
                             </Link>
                         </div>
                     </div>
