@@ -30,13 +30,6 @@ function ImageGallery() {
             link: '/family',
         },
         {
-            src: wedding,
-            hoverSrc: weddingHover,
-            title: 'WEDDINGS & EVENTS',
-            description: 'Document treasured memories',
-            link: '/weddings',
-        },
-        {
             src: solo,
             hoverSrc: soloHover,
             title: 'SOLO PORTRAITS',
