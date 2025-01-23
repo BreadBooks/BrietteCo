@@ -6,6 +6,8 @@ import GraduationCarousel from '../components/GraduationCarousel';
 import SoloPortraitCarousel from '../components/SoloPortraitCarousel';
 import FamilyCarousel from '../components/FamilyCarousel';
 import CouplesCarousel from '../components/CoupleCarousel';
+import EventsCarousel from '../components/EventsCarousel';
+
 function GalleriesPage() {
     const galleryData = [
         {
@@ -31,6 +33,12 @@ function GalleriesPage() {
             description: 'Capture your love with your life partner!',
             link: '/couples',
             carousel: <CouplesCarousel />,
+        },
+        {
+            title: 'Event Photos',
+            description: 'Document your special day forever!',
+            link: '/events',
+            carousel: <EventsCarousel />,
         },
     ];
 

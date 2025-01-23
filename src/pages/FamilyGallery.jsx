@@ -74,21 +74,12 @@ const photos = [
     family14,
     family15,
     family16,
-    family17,
-    family18,
-    family19,
-    family20,
-    family24,
-    family25,
-    family26,
-    family27,
 ];
 
 // Low resolution images
 const lowResPhotos = [
     family21_low, family22_low, family23_low, family4_low, family5_low, family6_low, family7_low, family8_low,
     family9_low, family10_low, family11_low, family12_low, family13_low, family14_low, family15_low, family16_low,
-    family17_low, family18_low, family19_low, family20_low, family24_low, family25_low, family26_low, family27_low
 ];
 
 
