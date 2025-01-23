@@ -31,7 +31,7 @@ function Hero() {
       <nav className="hero-navigation">
         <Link to="/services" className="nav-link">Services</Link>
         <Link to="/galleries" className="nav-link">Galleries</Link>
-        <Link to="/about-me" className="nav-link">About Me</Link>
+        <Link to="/aboutme" className="nav-link">About Me</Link>
         <Link to="/contact" className="nav-link">Contact</Link>
       </nav>
     </section>
