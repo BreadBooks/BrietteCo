@@ -12,6 +12,14 @@ import solo5 from '../assets/solo5.webp';
 import solo6 from '../assets/solo6.webp';
 import solo7 from '../assets/solo7.webp';
 import solo8 from '../assets/solo8.webp';
+import solo9 from '../assets/solo9.webp';
+import solo10 from '../assets/solo10.webp';
+import solo11 from '../assets/solo11.webp';
+import solo12 from '../assets/solo12.webp';
+import solo13 from '../assets/solo13.webp';
+import solo14 from '../assets/solo14.webp';
+import solo15 from '../assets/solo15.webp';
+import solo16 from '../assets/solo16.webp';
 
 const photos = [
     solo1,
@@ -22,6 +30,14 @@ const photos = [
     solo6,
     solo7,
     solo8,
+    solo9,
+    solo10,
+    solo11,
+    solo12,
+    solo13,
+    solo14,
+    solo15,
+    solo16,
 ];
 
 function SoloGallery() {
