@@ -11,6 +11,7 @@ import GalleriesPage from './pages/GalleriesPage';
 import TestimonialsPage from './pages/TestimonialsPage';
 import ContactPage from './pages/ContactPage';
 import FamilyGallery from './pages/FamilyGallery';
+import CoupleGallery from './pages/CoupleGallery';
 import './App.css';
 import SoloGallery from './pages/SoloGallery';
 import GraduationGallery from './pages/GraduationGallery';
@@ -46,6 +47,7 @@ function App() {
                     <Route path="/aboutme" element={<TestimonialsPage />} />
                     <Route path="/contact" element={<ContactPage />} />
                     <Route path="/family" element={<FamilyGallery />} />
+                    <Route path="/couples" element={<CoupleGallery />} />
                     <Route path="/solo-portraits" element={<SoloGallery />} />
                     <Route path="/graduation" element={<GraduationGallery/>} />
                 </Routes>
