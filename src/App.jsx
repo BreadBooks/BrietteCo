@@ -15,6 +15,7 @@ import CoupleGallery from './pages/CoupleGallery';
 import './App.css';
 import SoloGallery from './pages/SoloGallery';
 import GraduationGallery from './pages/GraduationGallery';
+import EventGallery from './pages/EventsGallery';
 
 function App() {
     return (
@@ -50,6 +51,7 @@ function App() {
                     <Route path="/couples" element={<CoupleGallery />} />
                     <Route path="/solo-portraits" element={<SoloGallery />} />
                     <Route path="/graduation" element={<GraduationGallery/>} />
+                    <Route path="/events" element={<EventGallery/>} />
                 </Routes>
             </div>
 

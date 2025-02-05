@@ -1,0 +1,66 @@
+/* EventsGallery.css */
+
+.events-gallery {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.gallery-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.event-swiper {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    position: relative;
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+
+.event-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+/* Swiper Navigation Buttons */
+.swiper-button-prev, .swiper-button-next {
+    color: #fff !important;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.swiper-button-prev:hover, .swiper-button-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Adjust button sizes */
+.swiper-button-prev::after, .swiper-button-next::after {
+    font-size: 20px !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery-title {
+        font-size: 1.5rem;
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+        padding: 10px;
+    }
+
+    .swiper-button-prev::after, .swiper-button-next::after {
+        font-size: 16px !important;
+    }
+}

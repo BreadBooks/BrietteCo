@@ -8,7 +8,6 @@ function Hero() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // When the user scrolls beyond the hero (e.g., more than viewport height), hide the hero
       if (window.scrollY > window.innerHeight * 0.9) {
         setHideHero(true);
       } else {

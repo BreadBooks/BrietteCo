@@ -21,6 +21,7 @@
     "react-transition-group": "^4.4.5",
     "react-window": "^1.8.10",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^6.1.13"
+    "styled-components": "^6.1.13",
+    "swiper": "^11.2.2"
   }
 }
