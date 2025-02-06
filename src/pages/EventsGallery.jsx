@@ -42,10 +42,10 @@ const event2Photos = [
 function EventsGallery() {
   return (
     <div className="events-gallery">
-      <h1 className="gallery-title">Event 1</h1>
+      <h1 className="gallery-title">Ana & Luke - Courthouse Ceremony</h1>
       <EventGalleryCarousel images={event1Photos} height="80vh" />
 
-      <h1 className="gallery-title">Event 2</h1>
+      <h1 className="gallery-title">Fiza & Musa's Shaadi</h1>
       <EventGalleryCarousel images={event2Photos} height="80vh" />
     </div>
   );
