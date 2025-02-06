@@ -1,0 +1,53 @@
+/* The overall container holds the carousel and positions the arrows */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+}
+
+/* The carousel itself is a flex container with horizontal scrolling.
+   We hide the native scrollbar for a cleaner look. */
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+}
+
+.carousel::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+/* The container for each copy of your images array.
+   This ensures that the images in each copy stay together in a row. */
+.carousel-copy {
+    display: flex;
+}
+
+/* Each item is kept side by side with no gap.
+   Using flex-shrink: 0 ensures each image stays at its natural width. */
+.carousel-item {
+    flex: 0 0 auto;
+}
+
+/* Style for the left/right arrow buttons */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Adjusted arrow positions */
+.carousel-arrow.left {
+    left: 50px; /* or use a percentage: left: 5%; */
+}
+
+.carousel-arrow.right {
+    right: 50px; /* or use a percentage: right: 5%; */
+}
