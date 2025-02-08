@@ -4,12 +4,45 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     background-color: #f9f9f9;
     padding: 20px;
     text-align: center;
 }
 
+/* Banner Section Styling */
+.contact-banner {
+    position: relative;  /* Creates the positioning context for the overlay */
+    width: 100vw;
+    overflow: hidden;    /* Hides any overflow from the image */
+    text-align: center;
+}
+
+.contact-banner-image {
+    width: 100vw;
+    height: auto;
+    display: block;
+}
+
+.banner-overlay {
+    position: absolute;
+    bottom: 0;                 /* Position the overlay at the bottom of the banner */
+    left: 50%;
+    transform: translateX(-50%); /* Center the overlay horizontally */
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);  /* Semi-transparent background for contrast */
+    padding: 10px 0;
+    z-index: 1;                /* Ensure the overlay appears on top of the image */
+    text-align: center;
+}
+
+.banner-overlay .banner-text {
+    margin: 0;
+    color: #fff;              /* White text for readability */
+    font-size: 2.5rem;        /* Adjust size as needed */
+    font-family: 'Pacifico', cursive;
+}
+
+/* (Optional) If you still want a separate title outside the banner, you can keep this */
 .contact-title {
     font-family: 'Pacifico', cursive;
     font-size: 2.5rem;
@@ -34,7 +67,8 @@
     max-width: 400px;
 }
 
-.contact-input, .contact-textarea {
+.contact-input,
+.contact-textarea {
     font-family: 'Arial', sans-serif;
     font-size: 1rem;
     padding: 10px 15px;
@@ -46,7 +80,8 @@
     box-sizing: border-box;
 }
 
-.contact-input:focus, .contact-textarea:focus {
+.contact-input:focus,
+.contact-textarea:focus {
     border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
@@ -79,7 +114,6 @@
     .contact-title {
         font-size: 2rem;
     }
-
     .contact-description {
         font-size: 0.9rem;
     }
