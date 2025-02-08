@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@1&family=Hubballi&family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Pacifico&family=Playwrite+US+Modern:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@1&family=Hubballi&family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&&family=Playwrite+US+Modern:wght@100..400&display=swap');
 .image-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
