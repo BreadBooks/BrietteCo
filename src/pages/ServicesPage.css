@@ -77,3 +77,19 @@
     width: 100%;
     max-width: 1000px;
 }
+
+/* Services Banner Styling */
+.services-banner {
+    position: relative; /* This ensures that z-index works as expected */
+    z-index: 10; /* High enough to appear on top if needed */
+    width: 100vw;
+    overflow: hidden;
+    text-align: center;
+    margin-bottom: 30px;  /* Adjust spacing below the banner as needed */
+}
+
+.services-banner-image {
+    width: 100vw;
+    height: auto;
+    display: block;
+}

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@1&family=Hubballi&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Pacifico&family=Playwrite+US+Modern:wght@100..400&display=swap');
 .galleries-page {
     position: flex;
     background-color: #dddee2;
@@ -10,7 +10,6 @@
 }
 
 .galleries-page h1 {
-    font-family: 'Pacifico', cursive;
     font-size: 3rem; /* Increase font size for a more impactful heading */
     color: #333;
     margin-bottom: 0.1rem;
@@ -21,6 +20,15 @@
     font-size: 1.5rem;
 }
 
+.gallery-details p {
+
+        margin: 0;
+        padding: 0 0 5px 0; /* Add some spacing below if needed */
+        font-size: 1.5rem; /* Adjust size as needed */
+        font-family: "Josefin Slab", serif;
+        font-style: italic;
+
+}
 
 .gallery-cards {
     width: 100%; /* Stretch to full width */
@@ -192,12 +200,14 @@
 .gallery-banner {
     position: relative; /* Makes this container the positioning context */
     text-align: center;
+    font-family: "Josefin Slab", serif;
   }
   
   .gallery-banner-image {
     width: 100vw;
     height: auto;
     display: block;
+    font-family: "Josefin Slab", serif;
   }
   
   .banner-overlay {
@@ -210,9 +220,20 @@
     text-align: center;
     padding: 10px 0;
     z-index: 1;
+    font-family: "Josefin Slab", serif;
   }
-  
+.banner-text p {
+    font-family: "Josefin Slab", serif;
+}
   /* Style for the paragraph text inside the overlay */
+  .banner-overlay .banner-text p {
+    margin: 0;
+    padding: 0 0 5px 0; /* Add some spacing below if needed */
+    color: #fff; /* White text for contrast */
+    font-size: 1.5rem; /* Adjust size as needed */
+    font-family: "Josefin Slab", serif;
+    font-style: italic;
+  }
   .banner-overlay .banner-text {
     margin: 0;
     padding: 0 0 5px 0; /* Add some spacing below if needed */
@@ -221,7 +242,6 @@
     font-family: "Josefin Slab", serif;
     font-style: italic;
   }
-  
   /* Style for the link */
   .banner-overlay .services-link {
     color: #fff;
@@ -235,4 +255,9 @@
   color: #00d9ff; /* Change the color on hover */
   transform: scale(1.05); /* Slightly enlarge the element */
   transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+div .banner-overlay .p {
+    font-family: "Josefin Slab", serif;
+    text-decoration: none;
 }

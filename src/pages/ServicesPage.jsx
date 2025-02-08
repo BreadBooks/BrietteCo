@@ -1,5 +1,7 @@
+// src/pages/ServicesPage.jsx
 import React, { useState } from 'react';
 import './ServicesPage.css';
+import servicesBanner from '../assets/servicesbanner.svg'; // Import your banner image
 import ThirtyMinSession from '../assets/svg/30-min-session.svg';
 import OneHourSession from '../assets/svg/1hr-session.svg';
 import EventSession from '../assets/svg/event-session.svg';
@@ -69,9 +71,20 @@ function ServicesPage() {
                 "Of course! I’m here to help. You can email me at briettecoportraits@gmail.com or fill out my contact form here. I strive to respond within 24 hours, though it may take a little longer on weekends."
         }
     ];
+    const banner = (
+        <div className="services-banner">
+            <img
+                src={servicesBanner}
+                alt="Our Services"
+                className="services-banner-image"
+            />
+        </div>
+    );
 
     return (
         <div className="services-page">
+            {banner}  {/* This will render first */}
+            
             <div className="services-grid">
                 {services.map(service => (
                     <div key={service.id} className="service-card">
@@ -99,8 +112,8 @@ function ServicesPage() {
                 </div>
             </div>
         </div>
-
     );
 }
+
 
 export default ServicesPage;

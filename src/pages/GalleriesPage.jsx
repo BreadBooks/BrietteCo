@@ -44,7 +44,6 @@ function GalleriesPage() {
   ];
   return (
     <div className="galleries-page">
-      {/* Banner Section */}
       <div className="gallery-banner">
   <img
     src={galleryBanner}
