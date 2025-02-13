@@ -2,9 +2,9 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import graduation1 from '../assets/graduation1.jpg';
-import graduation2 from '../assets/graduation2.jpg';
-import graduation3 from '../assets/graduation3.jpg';
+import graduation1 from '../assets/graduation1.webp';
+import graduation2 from '../assets/graduation2.webp';
+import graduation3 from '../assets/graduation3.webp';
 
 function CustomArrow(props) {
     const { className, style, onClick } = props;

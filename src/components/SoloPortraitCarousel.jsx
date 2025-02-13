@@ -2,9 +2,9 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import portrait1 from '../assets/portrait1.jpg';
-import portrait2 from '../assets/portrait2.jpg';
-import portrait3 from '../assets/portrait3.jpg';
+import portrait1 from '../assets/portrait1.webp';
+import portrait2 from '../assets/portrait2.webp';
+import portrait3 from '../assets/portrait3.webp';
 
 function CustomArrow(props) {
     const { className, style, onClick } = props;
