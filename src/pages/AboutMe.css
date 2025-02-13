@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@1&family=Hubballi&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Pacifico&family=Playwrite+US+Modern:wght@100..400&display=swap');
 body {
     margin: 0;
     padding: 0;
@@ -96,18 +96,45 @@ body {
   box-sizing: border-box;
 }
 
-/* Container for the images */
+/* Ensure images don't trigger horizontal scroll */
 .about-me-images {
-  margin: 0;
-  padding-top: 80px;
-  width: 100%;       /* Use 100% instead of 100vw */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-}
+    margin: 0;
+    padding: 0;
+    padding-top: 80px;
+    width: 100%;
+    overflow-x: hidden;
+  }
   
-.page-wide-image {
-  width: 100%;       /* Ensure the image fills the container width */
-  height: auto;
-  display: block;
-  margin: 0;
-  padding: 0;
-}
+  .page-wide-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+  
+ /* Container for the third image and overlay */
+.contact-overlay-container {
+    position: relative;
+  }
+  
+  /* Overlay text styles */
+  .overlay-text {
+    position: absolute;
+    top: 20px;       /* Now positions the text at the top */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 2.8rem;
+    font-family: "Josefin Slab", serif;
+    font-style: italic;
+  }
+  
+  /* Optional: Hover effect for the overlay text */
+  .overlay-text:hover {
+    color: rgb(6, 40, 78);
+    transition: ease-in 0.3s;
+  }
+  
