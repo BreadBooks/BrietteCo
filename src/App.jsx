@@ -8,14 +8,13 @@ import WelcomeSection from './components/WelcomeSection';
 import MomentsSection from './components/MomentsSection';
 import ServicesPage from './pages/ServicesPage';
 import GalleriesPage from './pages/GalleriesPage';
-import TestimonialsPage from './pages/TestimonialsPage';
 import ContactPage from './pages/ContactPage';
 import FamilyGallery from './pages/FamilyGallery';
 import CoupleGallery from './pages/CoupleGallery';
-import './App.css';
 import SoloGallery from './pages/SoloGallery';
 import GraduationGallery from './pages/GraduationGallery';
 import EventGallery from './pages/EventsGallery';
+import AboutPage from './pages/AboutPage';
 
 function App() {
     return (
@@ -45,7 +44,7 @@ function App() {
                     {/* Page Routes */}
                     <Route path="/services" element={<ServicesPage />} />
                     <Route path="/galleries" element={<GalleriesPage />} />
-                    <Route path="/aboutme" element={<TestimonialsPage />} />
+                    <Route path="/aboutme" element={<AboutPage />} />
                     <Route path="/contact" element={<ContactPage />} />
                     <Route path="/family" element={<FamilyGallery />} />
                     <Route path="/couples" element={<CoupleGallery />} />

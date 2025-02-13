@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-/* Base Styles */
 body {
     margin: 0;
     padding: 0;
@@ -89,4 +87,27 @@ body {
     content: '★';
     color: #f39c12;
     font-size: 1.5rem;
+}
+
+/* Apply a global box-sizing rule */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Container for the images */
+.about-me-images {
+  margin: 0;
+  padding-top: 80px;
+  width: 100%;       /* Use 100% instead of 100vw */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+  
+.page-wide-image {
+  width: 100%;       /* Ensure the image fills the container width */
+  height: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
 }
