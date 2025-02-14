@@ -1,7 +1,7 @@
 // src/pages/ServicesPage.jsx
 import React, { useState } from 'react';
 import './ServicesPage.css';
-import servicesBanner from '../assets/servicesbanner.svg'; // Import your banner image
+import servicesBanner from '../assets/servicesbanner.webp'; // Import your banner image
 import ThirtyMinSession from '../assets/svg/30-min-session.svg';
 import OneHourSession from '../assets/svg/1hr-session.svg';
 import EventSession from '../assets/svg/event-session.svg';

@@ -7,7 +7,7 @@ import SoloPortraitCarousel from '../components/SoloPortraitCarousel';
 import FamilyCarousel from '../components/FamilyCarousel';
 import CouplesCarousel from '../components/CoupleCarousel';
 import EventsCarousel from '../components/EventsCarousel';
-import galleryBanner from '../assets/gallerybanner.svg';
+import galleryBanner from '../assets/gallerybanner.webp';
 
 function GalleriesPage() {
   const galleryData = [

@@ -2,9 +2,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link if using React Router
 import './AboutMe.css'; 
-import image1 from '../assets/about1.svg';
-import image2 from '../assets/about2.svg';
-import image3 from '../assets/about3.svg';
+import image1 from '../assets/about1.webp';
+import image2 from '../assets/about2.webp';
+import image3 from '../assets/about3.webp';
 
 function AboutPage() {
   return (

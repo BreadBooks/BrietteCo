@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com'; // Import EmailJS
 import './ContactPage.css';
-import contactBanner from '../assets/contactbanner.svg'; // adjust the path as needed
+import contactBanner from '../assets/contactbanner.webp'; // adjust the path as needed
 
 function ContactPage() {
   // State to track whether the form was successfully submitted
