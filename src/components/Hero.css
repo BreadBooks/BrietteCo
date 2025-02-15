@@ -59,3 +59,31 @@
     color: #00c6f8; /* Adjust hover color */
     filter:none(100%);
   }
+
+  /* Media Query for smaller devices */
+@media only screen and (max-width: 768px) {
+  .hero {
+    height: 70vh; /* Adjust height for smaller screens */
+    flex-direction: column; /* Stack content if needed */
+    padding: 1rem; /* Optional padding for breathing room */
+  }
+
+  .hero-content {
+    margin-bottom: 1.5rem; /* Add space between logo and navigation */
+  }
+
+  .hero-logo {
+    max-width: 60%; /* Increase max-width on smaller devices */
+  }
+
+  .hero-navigation {
+    gap: 1rem; /* Reduce gap between nav links */
+    flex-wrap: wrap; /* Wrap links if they overflow */
+  }
+
+  .nav-link {
+    font-size: 1rem;      /* Reduce the font size */
+    letter-spacing: 1px;   /* Reduce letter spacing if needed */
+    padding: 0.1rem 0.1rem; /* Adjust padding to ensure they fit on one line */
+  }
+}
