@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@1&family=Hubballi&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Pacifico&family=Playwrite+US+Modern:wght@100..400&display=swap');
+
 .welcome-section {
   background: url('../assets/welcome-image.svg') no-repeat center center/cover;
   width: auto;
@@ -41,18 +42,45 @@
   margin-top: 1rem;
   font-size: 1.2rem;
   color: #fff;
-  font-style: italic; /* Makes the whole sentence italicized */
+  font-style: italic;
 }
 
 .contact-link-text {
-  color: #f9a825; /* A bright, attention-grabbing color */
   text-decoration: none;
   font-weight: bold;
-  font-style: italic; /* Ensures the clickable text is also italicized */
-  color:#364a50;
+  font-style: italic;
+  color: #364a50;
 }
 
 .contact-link-text:hover {
   text-decoration: underline;
-  color: #69b7c2; /* A slightly lighter shade for hover effect */
+  color: #69b7c2;
+}
+
+/* Mobile adjustments */
+@media only screen and (max-width: 768px) {
+  .welcome-section {
+    height: auto; /* Let content determine height */
+    justify-content: center; /* Center content horizontally */
+    padding: 1.5rem; /* Slightly less padding on mobile */
+    background-image: none;
+  }
+
+  .welcome-text {
+    max-width: 90%; /* Reduce max-width for smaller screens */
+    margin-right: 0; /* Remove right margin */
+    text-align: center; /* Ensure text is centered */
+  }
+
+  .welcome-text h1 {
+    font-size: 2.5rem; /* Smaller heading on mobile */
+  }
+
+  .welcome-text p {
+    font-size: 1.5rem; /* Smaller paragraph text */
+  }
+
+  .contact-link {
+    font-size: 1rem; /* Adjust contact link size */
+  }
 }
