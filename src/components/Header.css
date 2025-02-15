@@ -1,173 +1,179 @@
-
+/* General Header Styles */
 .header {
     width: 100%;
-    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1;
-    text-align: center;
     background-image: url("../assets/image13.webp");
     background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      filter: grayscale(100%); /* Apply grayscale only to background */
-}
-
-
-.header-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-}
-
-.logo img {
-    max-width: 600px;
-    height: fit-content;
-
-}
-
-/* Navbar styling */
-.navbar {
-    display: flex;
-    justify-content: center;
+    background-position: center;
+    background-attachment: fixed;
+    filter: grayscale(100%);
+  }
+  
+  .header.compact {
+    padding: 15px 0; /* Increased padding for breathing room */
     width: 100%;
-    color: white;
-    font-size: 25pt;
-    padding-top: 400px;
-    
-}
-
-.nav-links {
-    display: flex;
-    gap: 60px;
-    list-style-type: none;
-    justify-content: center;
-}
-
-.nav-links li a {
-    text-decoration: none;
-    color: rgb(231, 231, 231); /* Original link color */
-    text-transform: uppercase;
-    letter-spacing: 0.4cap;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.418);
-}
-
-.nav-links li a:hover {
-    color: rgb(129, 224, 255); 
-}
-
-.nav-left ul li a:hover {
-    color: #f1f1f1;
-}
-
-.nav-right ul li a:hover {
-    color: #f1f1f1;
-}
-
-/* Compact Header Specific Styles */
-.header.compact {
-    padding: 10px 0;
-    width: 100%; /* Ensure it spans the full viewport width */
-    left: 0; /* Align to the very left */
     box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #add8e6; /* Darker background in compact mode */
+    background-color: #add8e6;
     background-image: none;
     filter: none;
-    height: 10%;
-}
-
-.header.background-active {
-    background-color: #add8e6; /* Darker background in compact mode */
-}
-
-.compact-content {
-    flex-direction: row;
+    height: auto; /* Let height adjust based on content */
+  }
+  
+  .header.background-active {
+    background-color: #add8e6;
+  }
+  
+  /* Updated Header Content Layout for Desktop */
+  .header-content {
+    display: flex;
     align-items: center;
     justify-content: center;
+    gap: 3rem; /* Increased gap between left nav, logo, and right nav */
     width: 100%;
-    padding: 0 20px; /* Padding for spacing within compact content */
-    color: white;
+    padding: 0 30px; /* More horizontal padding */
     background-color: rgba(173, 216, 230, 0.4);
-    backdrop-filter: blur(5px); /* Apply blur effect */
-    -webkit-backdrop-filter: blur(5px); /* For Safari compatibility */
-    gap: 4%
-}
-
-/* Ensure the compact logo size is smaller */
-.header.compact .logo img {
-    max-width: 80px;
-    height: auto;
-}
-
-/* Alignment for compact navigation sections */
-.nav-left, .nav-right {
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
+  
+  /* Nav containers for desktop */
+  .nav-left, .nav-right {
     display: flex;
-    width: 30%;
-}
-
-.nav-left {
-    justify-content: flex-end;
-}
-
-.nav-right {
-    justify-content: flex-start;
-}
-
-
-.nav-left ul, .nav-right ul {
+    align-items: center;
+  }
+  
+  /* Even spacing between individual links */
+  .nav-left ul, .nav-right ul {
     display: flex;
-    width: 100%;
-    list-style-type: none;
-    gap: 20%; /* Controls the gap between links */
-}
-
-.nav-left ul {
-    justify-content: flex-end;
-}
-
-.nav-right ul {
-    justify-content: flex-start;
-    padding-left: 0px;
-}
-
-.nav-left ul li , .nav-right ul li  {
-    display: flex;
-}
-
-
-.nav-left ul li a, .nav-right ul li a {
+    list-style: none;
+    gap: 2rem;  /* Increased spacing between links */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-left ul li a, .nav-right ul li a {
     color: #475e65;
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
+    padding: 0.5rem;  /* Added padding around links */
+  }
+  .nav-left ul li a,
+.nav-right ul li a {
+  color: #475e65;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.5rem;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-/* Fade and Slide-Up Effect */
-.header-transition-enter {
-    opacity: 0;
-    transform: translateY(20px); /* Start slightly lower */
+.nav-left ul li a:hover,
+.nav-right ul li a:hover {
+  color: #a9b5bb;
+  border-radius: 4px; /* Optional: smooth rounded corners */
+}
+
+  /* Centered Logo */
+  .logo {
+    text-align: center;
   }
   
-  .header-transition-enter-active {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 300ms ease-out, transform 300ms ease-out;
+  .logo img {
+    max-width: 80px;
+    height: auto;
+    padding: 0.5rem; /* Added padding around logo */
   }
   
-  .header-transition-exit {
-    opacity: 1;
-    transform: translateY(0);
+  /* Mobile Hamburger Icon (hidden on desktop) */
+  .mobile-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
   }
   
-  .header-transition-exit-active {
-    opacity: 0;
-    transform: translateY(-20px); /* Slide up when exiting */
-    transition: opacity 300ms ease-out, transform 300ms ease-out;
+  .mobile-hamburger .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #475e65;
+    margin: 3px 0;
+  }
+  
+  /* Mobile Menu (initially hidden) */
+  .mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(173, 216, 230, 0.9);
+    z-index: 10;
+    padding: 1rem 0;
+  }
+  
+  .mobile-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .mobile-menu ul li a {
+    color: #475e65;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.5rem;
+  }
+  
+  /* Media Queries */
+  
+ /* Mobile Styles */
+@media only screen and (max-width: 768px) {
+    /* Hide desktop navigation */
+    .nav-left,
+    .nav-right {
+      display: none;
+    }
+    
+    /* Adjust header content layout for mobile */
+    .header-content {
+      justify-content: space-between; /* Pushes logo and hamburger to the edges */
+      padding: 0 20px; /* Adjust horizontal padding if needed */
+      gap: 0; /* Remove extra gap */
+    }
+    
+    /* Show mobile hamburger */
+    .mobile-hamburger {
+      display: flex;
+    }
+    
+    /* Ensure the logo remains as is (or adjust as needed) */
+    .logo {
+      flex: none;
+    }
+    
+    /* Show mobile menu when toggled */
+    .mobile-menu.open {
+      display: block;
+    }
+  }
+  
+  
+  /* Desktop: Hide mobile-specific elements */
+  @media only screen and (min-width: 769px) {
+    .mobile-hamburger,
+    .mobile-menu {
+      display: none;
+    }
   }
   
