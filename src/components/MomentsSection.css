@@ -1,6 +1,15 @@
 .moments-section {
-    background: url('../assets/moments.webp') no-repeat center center/cover; /* Replace with your image */
-    height: 100vh; /* Full viewport height */
-    width: 100%;
+  background: url('../assets/moments.webp') no-repeat center center/cover;
+  height: 100vh; /* Full viewport height on desktop */
+  width: 100%;
+}
+
+/* Mobile adjustments */
+@media only screen and (max-width: 768px) {
+  .moments-section {
+    height: auto; /* Let the height adjust based on content */
+    background-size: cover; /* Ensures background covers the container */
+    background-position: center; /* Centers the image */
+    padding: 5rem 0; /* Optional padding to give it breathing room */
   }
-  
+}

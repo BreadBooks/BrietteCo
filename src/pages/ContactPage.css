@@ -8,13 +8,14 @@
     background-color: #f9f9f9;
     padding: 20px;
     text-align: center;
+    font-family: "Josefin Slab", serif;
 }
 
-/* Banner Section Styling */
+/* Existing banner styles */
 .contact-banner {
-    position: relative;  /* Creates the positioning context for the overlay */
+    position: relative;  
     width: 100vw;
-    overflow: hidden;    /* Hides any overflow from the image */
+    overflow: hidden;    /* Hides any overflow from the image on desktop */
     text-align: center;
 }
 
@@ -24,6 +25,19 @@
     display: block;
 }
 
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  /* Allow the container to show full image */
+  .contact-banner {
+    overflow: visible;
+  }
+  
+  .contact-banner-image {
+    width: 100%;
+    padding-top: 80px; /* Adjust this value as needed */
+  }
+
+}
 .banner-overlay {
     position: absolute;
     bottom: 0;                 /* Position the overlay at the bottom of the banner */
@@ -52,9 +66,9 @@
 }
 
 .contact-description {
-    font-family: 'Arial', sans-serif;
-    font-size: 1rem;
-    color: #666;
+    font-family: "Josefin Slab", serif;
+    font-size: 1.4rem;
+    color: #363434;
     margin-bottom: 30px;
     max-width: 400px;
 }
@@ -99,16 +113,20 @@
     font-family: 'Arial', sans-serif;
     font-size: 1rem;
     padding: 10px 20px;
-    background-color: rgb(78, 146, 168);
-    color: #fff;
+    background-color: rgb(131, 195, 216);
+    color: #31454b;
     border: none;
     border-radius: 25px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
+    transition: color 0.2s ease-in-out;
 }
 
 .contact-button:hover {
-    background-color: rgb(131, 195, 216);
+    background-color: rgb(33, 103, 126);
+    color: white;
+    transition: background-color 0.3s ease-in-out;
+    transition: color 0.2s ease-in-out;
 }
 
 /* Mobile Responsiveness */

@@ -80,9 +80,10 @@ function ContactPage() {
       </div>
 
       {/* Title & Description */}
-      <h1 className="contact-title">Get in Touch</h1>
       <p className="contact-description">
-        We’d love to hear from you! Fill out the form below to get started.
+        I'd love to book a photo session with you!<br>
+        </br>
+        Fill out the form below to get started.
       </p>
 
       {submitted ? (
