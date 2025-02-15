@@ -1,16 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
 import logoalt from '../assets/logoalt.svg';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true); // default to visible
+  const location = useLocation();
   const toggleMenu = () => setMenuOpen(prev => !prev);
 
   useEffect(() => {
+    // If we are not on the homepage, always show the header
+    if (location.pathname !== '/') {
+      setVisible(true);
+      return;
+    }
+
+    // On homepage, show header only after scrolling past hero
     const handleScroll = () => {
-      // Change this threshold if needed; currently, header appears after hero height
       if (window.pageYOffset >= window.innerHeight) {
         setVisible(true);
       } else {
@@ -23,7 +30,7 @@ function Header() {
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location]);
 
   return (
     <header className={`header compact background-active ${visible ? 'visible' : 'hidden'}`}>
