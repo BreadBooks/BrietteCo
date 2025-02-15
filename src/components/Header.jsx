@@ -1,14 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import logoalt from '../assets/logoalt.svg';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [visible, setVisible] = useState(false);
   const toggleMenu = () => setMenuOpen(prev => !prev);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      // Change this threshold if needed; currently, header appears after hero height
+      if (window.pageYOffset >= window.innerHeight) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    // Check on mount in case the user has already scrolled
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="header compact background-active">
+    <header className={`header compact background-active ${visible ? 'visible' : 'hidden'}`}>
       <div className="header-content compact-content">
         {/* Desktop navigation: left side */}
         <div className="nav-left">

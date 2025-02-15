@@ -137,30 +137,56 @@
   
   /* Media Queries */
   
- /* Mobile Styles */
+/* Mobile Styles */
 @media only screen and (max-width: 768px) {
+    .header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+    }
+  
     /* Hide desktop navigation */
     .nav-left,
     .nav-right {
       display: none;
     }
     
-    /* Adjust header content layout for mobile */
+    /* Adjust header padding and layout for mobile */
+    .header.compact {
+      padding: 0px 0; /* Reduced vertical padding */
+    }
+  
     .header-content {
       justify-content: baseline;
-      padding-left: 0px; /* Adjust horizontal padding if needed */
-      gap: 0;
+      padding: 0 10px; /* Reduced horizontal padding */
+      gap: 10px; /* Reduced gap between elements */
     }
     
+    /* Resize the logo */
+    .logo img {
+      max-width: 60px; /* Smaller logo size */
+      height: 100%;
+      padding-right: 100px;
+      border: border-box;
+      gap: 0;
+      padding-bottom: none;
+    }
+    
+  
     /* Show mobile hamburger */
     .mobile-hamburger {
       display: flex;
-      padding-left: 200px !important;
+      padding-left: 100px; /* Adjust this as needed */
+      width: 25px; /* Optionally reduce the size */
+      height: 25px;
     }
     
-    /* Ensure the logo remains as is (or adjust as needed) */
-    .logo {
-      flex: none;
+    .mobile-hamburger .bar {
+      width: 100%;
+      height: 2px; /* Thinner bars */
+      background-color: #475e65;
+      margin: 2px 0;
     }
     
     /* Show mobile menu when toggled */
@@ -169,12 +195,17 @@
     }
   }
   
+  /* Initially hide the header (or make it transparent) */
+.header.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
   
-  /* Desktop: Hide mobile-specific elements */
-  @media only screen and (min-width: 769px) {
-    .mobile-hamburger,
-    .mobile-menu {
-      display: none;
-    }
+  /* Show header once scrolled past hero */
+  .header.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.3s ease;
   }
   

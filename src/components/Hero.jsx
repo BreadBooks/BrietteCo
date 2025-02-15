@@ -7,17 +7,22 @@ function Hero() {
   const [hideHero, setHideHero] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > window.innerHeight * 0.9) {
-        setHideHero(true);
-      } else {
-        setHideHero(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    // Only add scroll listener if on desktop
+    if (window.innerWidth >= 768) {
+      const handleScroll = () => {
+        if (window.scrollY > window.innerHeight * 0.9) {
+          setHideHero(true);
+        } else {
+          setHideHero(false);
+        }
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
   }, []);
+  
+  
 
  
   return (
