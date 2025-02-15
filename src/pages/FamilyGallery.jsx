@@ -3,6 +3,8 @@ import './FamilyGallery.css';
 import { Link } from 'react-router-dom';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
+import familyBanner from '../assets/familybanner.webp'; // new banner image
+
 import family1 from '../assets/family1.webp';
 import family2 from '../assets/family2.webp';
 import family3 from '../assets/family3.webp';
@@ -49,7 +51,6 @@ function FamilyGallery() {
         const handleScroll = () => {
             const scrollPosition = window.scrollY + window.innerHeight;
             const totalHeight = document.documentElement.scrollHeight;
-
             // If scrolled near the bottom, load the next batch
             if (scrollPosition >= totalHeight - 20) {
                 loadMorePhotos();
@@ -58,7 +59,6 @@ function FamilyGallery() {
 
         // Attach the scroll event listener
         window.addEventListener('scroll', handleScroll);
-
         return () => {
             // Cleanup the scroll listener
             window.removeEventListener('scroll', handleScroll);
@@ -94,8 +94,19 @@ function FamilyGallery() {
 
     return (
         <div className="family-gallery">
+            {/* New Banner Section */}
+            <div className="gallery-banner">
+                <img
+                    src={familyBanner}
+                    alt="Family Banner"
+                    className="gallery-banner-image"
+                />
+                <div className="banner-overlay">
+                </div>
+            </div>
+
+            {/* Replace the old title with additional info */}
             <div className="gallery-header">
-                <h1 className="gallery-title">Family & Couple Gallery</h1>
                 <p className="gallery-description">
                     Looking to book your own family or couple session?{' '}
                     <Link to="/services" className="booking-link">
