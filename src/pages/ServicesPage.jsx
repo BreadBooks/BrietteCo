@@ -5,6 +5,7 @@ import servicesBanner from '../assets/servicesbanner.webp'; // Import your banne
 import ThirtyMinSession from '../assets/svg/30-min-session.svg';
 import OneHourSession from '../assets/svg/1hr-session.svg';
 import EventSession from '../assets/svg/event-session.svg';
+import { Link } from 'react-router-dom';
 
 function ServicesPage() {
     const [openFAQ, setOpenFAQ] = useState(null);
@@ -81,39 +82,52 @@ function ServicesPage() {
         </div>
     );
 
-    return (
-        <div className="services-page">
-            {banner}  {/* This will render first */}
-            
-            <div className="services-grid">
-                {services.map(service => (
-                    <div key={service.id} className="service-card">
-                        <img src={service.svg} alt={service.alt} />
-                    </div>
-                ))}
-            </div>
+    
+  return (
+    <div className="services-page">
+      <div className="services-banner">
+        <img
+          src={servicesBanner}
+          alt="Our Services"
+          className="services-banner-image"
+        />
+      </div>
 
-            <div className="faq-section">
-                <h2 className="faq-title">⭐ Frequently Asked Questions ⭐</h2>
-                <div className="faq-list">
-                    {faqs.map((faq, index) => (
-                        <div key={index}>
-                            <div
-                                className="faq-question"
-                                onClick={() => toggleFAQ(index)}
-                            >
-                                {faq.question}
-                            </div>
-                            {openFAQ === index && (
-                                <div className="faq-answer">{faq.answer}</div>
-                            )}
-                        </div>
-                    ))}
-                </div>
+      <div className="services-grid">
+        {services.map(service => (
+          <div key={service.id} className="service-card">
+            <img src={service.svg} alt={service.alt} />
+          </div>
+        ))}
+      </div>
+
+      <div className="faq-section">
+        <h2 className="faq-title">⭐ Frequently Asked Questions ⭐</h2>
+        <div className="faq-list">
+          {faqs.map((faq, index) => (
+            <div key={index}>
+              <div
+                className="faq-question"
+                onClick={() => toggleFAQ(index)}
+              >
+                {faq.question}
+              </div>
+              {openFAQ === index && (
+                <div className="faq-answer">{faq.answer}</div>
+              )}
             </div>
+          ))}
         </div>
-    );
-}
+      </div>
 
+      {/* New Book Section */}
+      <div className="book-section">
+        <Link to="/contact" className="book-link">
+          Ready to Book? Get in Contact Today!
+        </Link>
+      </div>
+    </div>
+  );
+}
 
 export default ServicesPage;

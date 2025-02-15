@@ -147,14 +147,15 @@
     
     /* Adjust header content layout for mobile */
     .header-content {
-      justify-content: space-between; /* Pushes logo and hamburger to the edges */
-      padding: 0 20px; /* Adjust horizontal padding if needed */
-      gap: 0; /* Remove extra gap */
+      justify-content: baseline;
+      padding-left: 0px; /* Adjust horizontal padding if needed */
+      gap: 0;
     }
     
     /* Show mobile hamburger */
     .mobile-hamburger {
       display: flex;
+      padding-left: 200px !important;
     }
     
     /* Ensure the logo remains as is (or adjust as needed) */

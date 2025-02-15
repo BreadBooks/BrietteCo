@@ -1,50 +1,66 @@
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@1&family=Hubballi&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Pacifico&family=Playwrite+US+Modern:wght@100..400&display=swap');
+
 .services-page {
     display: flex;
-    flex-direction: column; /* Ensure vertical stacking */
+    flex-direction: column; /* Stack sections vertically */
     justify-content: center;
     align-items: center;
-    height: auto; /* Remove fixed height */
     background-color: #dddee2;
     padding: 30px;
-    margin-top: 75px; /* Add space between header and cards */
-    z-index: -1;
+    margin-top: 75px; /* Space below header */
 }
 
+/* ----------------- Banner Styling ----------------- */
+.services-banner {
+    position: relative;
+    z-index: 0;
+    width: 100vw;
+    overflow: hidden;
+    text-align: center;
+    margin-bottom: 30px;
+    height: 60vh;  /* Larger banner height */
+}
+
+.services-banner-image {
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ----------------- Services Grid & Cards ----------------- */
 .services-grid {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* Allow wrapping for responsive design */
-    gap: 10px; /* Adjust spacing between cards */
+    flex-wrap: wrap;
+    gap: 10px;
     width: 100%;
-}
-
-.service-card img {
-    width: auto;
-    height: 80vh; /* Maintain consistent height */
-    max-height: 90vh;
-    object-fit: contain;
-    margin: 0; /* Reset negative margin */
-    position: relative; /* Default positioning */
-    
 }
 
 .service-card {
     text-align: center;
 }
 
+.service-card img {
+    width: auto;
+    height: 80vh; /* Desktop height */
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+/* ----------------- FAQ Section ----------------- */
 .faq-section {
     margin-top: 30px;
     text-align: center;
-    width: 100%; 
+    width: 100%;
     font-family: "Josefin Slab", serif;
 }
 
 .faq-title {
     font-size: 40px;
     margin-bottom: 20px;
-    text-align: center;
+    color: #424040;
 }
 
 .faq-list {
@@ -59,13 +75,14 @@
     font-size: 30px;
     font-weight: bold;
     cursor: pointer;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
     transition: color 0.3s ease;
     text-align: center;
+    color: #424040;
 }
 
 .faq-question:hover {
-    color: #71bdd6 
+    color: #71bdd6;
 }
 
 .faq-answer {
@@ -73,23 +90,54 @@
     padding-left: 10px;
     color: #424040;
     font-size: 30px;
-    text-align: left; 
+    text-align: left;
     width: 100%;
     max-width: 1000px;
 }
 
-/* Services Banner Styling */
-.services-banner {
-    position: relative; /* This ensures that z-index works as expected */
-    z-index: 10; /* High enough to appear on top if needed */
-    width: 100vw;
-    overflow: hidden;
+/* ----------------- Book Section ----------------- */
+.book-section {
+    margin: 40px 0;
     text-align: center;
-    margin-bottom: 30px;  /* Adjust spacing below the banner as needed */
+    font-family: "Josefin Slab", serif;
+    font-size: 2rem;
+    color: #424040;
 }
 
-.services-banner-image {
-    width: 100vw;
-    height: auto;
-    display: block;
+.book-link {
+    color: inherit;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.book-link:hover {
+    color: #71bdd6;
+}
+
+/* ----------------- Mobile Responsiveness ----------------- */
+@media (max-width: 768px) {
+    .services-banner {
+        height: 40vh;
+    }
+
+    .service-card img {
+        height: 40vh;  /* Smaller height on mobile */
+    }
+
+    .services-page {
+        padding: 20px;
+        margin-top: 75px;
+    }
+
+    .faq-title {
+        font-size: 30px;
+    }
+
+    .faq-question, .faq-answer {
+        font-size: 20px;
+    }
+
+    .book-section {
+        font-size: 1.5rem;
+    }
 }
