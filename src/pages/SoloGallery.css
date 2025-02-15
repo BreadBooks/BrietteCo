@@ -252,10 +252,12 @@
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
+    div .solo-gallery {
+        padding-top: 0px !important;
+    }
     .modal-content {
         max-width: 95%;
         max-height: 85%;
-        padding: 10px;
     }
 
     .modal-photo {
@@ -272,7 +274,53 @@
         max-width: 45%; /* Smaller size for background images on mobile */
         max-height: 10vh;
     }
+
+    .banner-overlay {
+        bottom: 10px;
+        padding: 5px 10px;
+    }
+
+    .banner-text {
+        font-size: 1.8rem;
+    }
 }
 
 
+/* Reset global margins/paddings if not already done */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Banner Section */
+.gallery-banner {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(50% - 50vw); /* Ensures full viewport width */
+    overflow: hidden;
+}
+
+.gallery-banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.banner-overlay {
+    position: absolute;
+    bottom: 20px; /* Adjust vertical placement */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Optional for text contrast */
+    padding: 10px 20px;
+}
+
+.banner-text {
+    margin: 0;
+    font-family: 'Josefin Slab', serif;
+    font-size: 2.5rem;
+    color: #fff;
+}
 

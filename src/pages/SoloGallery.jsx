@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
+import soloBanner from '../assets/solobanner.webp'; // new banner image
+
 import solo1 from '../assets/solo1.webp';
 import solo2 from '../assets/solo2.webp';
 import solo3 from '../assets/solo3.webp';
@@ -41,39 +43,33 @@ const photos = [
 ];
 
 function SoloGallery() {
-    const [visiblePhotos, setVisiblePhotos] = useState(4); // Initial number of visible photos
+    const [visiblePhotos, setVisiblePhotos] = useState(4);
     const [loadedPhotos, setLoadedPhotos] = useState([]);
-    const [currentPhoto, setCurrentPhoto] = useState(null); // To track the current photo for modal
-    const [isModalOpen, setIsModalOpen] = useState(false); // To control modal visibility
+    const [currentPhoto, setCurrentPhoto] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.scrollY + window.innerHeight;
             const totalHeight = document.documentElement.scrollHeight;
-
-            // If scrolled near the bottom, load the next batch
             if (scrollPosition >= totalHeight - 20) {
                 loadMorePhotos();
             }
         };
-
-        // Attach the scroll event listener
         window.addEventListener('scroll', handleScroll);
-
         return () => {
-            // Cleanup the scroll listener
             window.removeEventListener('scroll', handleScroll);
         };
     }, [visiblePhotos]);
 
     const loadMorePhotos = () => {
         if (visiblePhotos < photos.length) {
-            setVisiblePhotos((prev) => Math.min(prev + 4, photos.length)); // Load next batch of 4 photos
+            setVisiblePhotos((prev) => Math.min(prev + 4, photos.length));
         }
     };
 
     const handleImageLoad = (src) => {
-        setLoadedPhotos((prev) => [...prev, src]); // Add to fully loaded list
+        setLoadedPhotos((prev) => [...prev, src]);
     };
 
     const openModal = (index) => {
@@ -95,8 +91,19 @@ function SoloGallery() {
 
     return (
         <div className="solo-gallery">
+            {/* New Banner Section */}
+            <div className="gallery-banner">
+                <img
+                    src={soloBanner}
+                    alt="Solo Banner"
+                    className="gallery-banner-image"
+                />
+                <div className="banner-overlay">
+                </div>
+            </div>
+
+            {/* Additional Header Info */}
             <div className="gallery-header">
-                <h1 className="gallery-title">Solo Portrait Gallery</h1>
                 <p className="gallery-description">
                     Looking to book your own solo portrait session?{' '}
                     <Link to="/services" className="booking-link">
