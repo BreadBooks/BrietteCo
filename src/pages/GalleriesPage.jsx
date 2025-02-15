@@ -50,13 +50,22 @@ function GalleriesPage() {
     alt="Our Galleries"
     className="gallery-banner-image"
   />
-  <div className="banner-overlay">
+  <div className="banner-overlay desktop-only">
     <p className="banner-text">Interested in booking a session?</p>
     <Link to="/services" className="services-link">
       Visit my Services Page to learn more!
     </Link>
   </div>
 </div>
+
+{/* Mobile Banner Text */}
+<div className="banner-mobile-text mobile-only">
+  <p className="banner-text">Interested in booking a session?</p>
+  <Link to="/services" className="services-link">
+    Visit my Services Page to learn more!
+  </Link>
+</div>
+
 
       {/* Gallery Cards */}
       <div className="gallery-cards">

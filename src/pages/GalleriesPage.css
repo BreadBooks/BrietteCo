@@ -1,16 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@1&family=Hubballi&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Pacifico&family=Playwrite+US+Modern:wght@100..400&display=swap');
+
+p {
+    color:#124c5f;
+}
 .galleries-page {
     position: flex;
     background-color: #dddee2;
     text-align: center;
     width: 100vw;
-    max-width: 100vw; 
+    max-width: 100vw;
     padding-top: 5%;
-    
+
 }
 
 .galleries-page h1 {
-    font-size: 3rem; /* Increase font size for a more impactful heading */
+    font-size: 3rem;
     color: #333;
     margin-bottom: 0.1rem;
 }
@@ -21,27 +25,34 @@
 
 .gallery-details p {
 
-        margin: 0;
-        padding: 0 0 5px 0; /* Add some spacing below if needed */
-        font-size: 1.5rem; /* Adjust size as needed */
-        font-family: "Josefin Slab", serif;
-        font-style: italic;
+    margin: 0;
+    padding: 0 0 5px 0;
+    /* Add some spacing below if needed */
+    font-size: 1.5rem;
+    /* Adjust size as needed */
+    font-family: "Josefin Slab", serif;
+    font-style: italic;
+    color:rgb(7, 48, 61)
 
 }
 
 .gallery-cards {
-    width: 100%; /* Stretch to full width */
-    max-width: 1200px; /* Optional: Limit maximum width for better aesthetics */
-    margin: 0 auto; /* Center the container */
+    width: 100%;
+    /* Stretch to full width */
+    max-width: 1200px;
+    /* Optional: Limit maximum width for better aesthetics */
+    margin: 0 auto;
+    /* Center the container */
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly; 
-    gap: 2rem; 
+    justify-content: space-evenly;
+    gap: 1rem;
 }
 
 
 .gallery-card {
-    flex: 1 1 calc(33.33% - 2rem); /* Allow cards to take up 1/3 of the row with gaps */
+    flex: 1 1 calc(33.33% - 2rem);
+    /* Allow cards to take up 1/3 of the row with gaps */
     background-color: #dddee2;
     border: none;
     box-shadow: none;
@@ -51,9 +62,11 @@
     flex-direction: column;
     justify-content: flex-start;
     align-content: center;
-    backdrop-filter: blur(10px); /* Optional blur effect */
+    backdrop-filter: blur(10px);
+    /* Optional blur effect */
     border-radius: 10px;
-    max-width: 300px; /* Optional: Restrict max width */
+    max-width: 300px;
+    /* Optional: Restrict max width */
     font-family: "Josefin Slab", serif;
 }
 
@@ -62,10 +75,13 @@
 .gallery-carousel {
     position: relative;
     background-color: #fff;
-    border: 1px solid #ddd; /* Thin border to resemble Polaroid photo frame */
-    padding: 15px; /* Add spacing to mimic Polaroid margins */
+    border: 1px solid #ddd;
+    /* Thin border to resemble Polaroid photo frame */
+    padding: 15px;
+    /* Add spacing to mimic Polaroid margins */
     height: auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add slight shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Add slight shadow */
 }
 
 .gallery-carousel img {
@@ -73,26 +89,32 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 2px; /* Slightly rounded corners */
+    border-radius: 2px;
+    /* Slightly rounded corners */
 }
+
 /* Move slick dots further down */
 .gallery-carousel .slick-dots {
     position: absolute;
-    bottom: -40px; /* Adjust this value to move dots lower */
+    bottom: -40px;
+    /* Adjust this value to move dots lower */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     justify-content: center;
-    gap: 10px; /* Add spacing between dots */
+    gap: 10px;
+    /* Add spacing between dots */
 }
 
 
 .gallery-carousel .slick-dots li.slick-active button:before {
-    color: #007BFF; /* Active dot color */
+    color: #007BFF;
+    /* Active dot color */
 }
 
 .gallery-details {
-    margin-top: 15px; /* Space between image and text */
+    margin-top: 15px;
+    /* Space between image and text */
     text-align: center;
     align-self: center;
     font-family: "Josefin Slab", serif;
@@ -121,7 +143,7 @@
     margin-top: 10px;
     padding: 0.5rem 1rem;
     background-color: #add8e6;
-    color:#124c5f;
+    color: #124c5f;
     font-size: 1.3rem;
     font-family: "Josefin Slab", serif;
     font-style: italic;
@@ -130,58 +152,74 @@
 
 .gallery-link:hover {
     background-color: rgb(7, 48, 61);
-    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition */
+    transition: transform 0.3s ease, color 0.3s ease;
+    /* Smooth transition */
 }
 
 /* Style the previous and next arrows */
 .gallery-carousel .slick-prev,
 .gallery-carousel .slick-next {
-    background-color: #007BFF; /* Blue background */
-    border-radius: 50%; /* Make the arrows circular */
+    background-color: #007BFF;
+    /* Blue background */
+    border-radius: 50%;
+    /* Make the arrows circular */
     width: 35px;
     height: 35px;
-    display: flex !important; /* Ensure arrows are displayed */
+    display: flex !important;
+    /* Ensure arrows are displayed */
     justify-content: center;
     align-items: center;
-    z-index: 1; /* Ensure arrows are on top of other elements */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional: Add a slight shadow */
-    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
+    z-index: 1;
+    /* Ensure arrows are on top of other elements */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /* Optional: Add a slight shadow */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    /* Smooth hover effect */
 }
 
 /* Arrow hover effect */
 .gallery-carousel .slick-prev:hover,
 .gallery-carousel .slick-next:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3;
+    /* Darker blue on hover */
 }
 
 /* Customize the arrow icons */
 .gallery-carousel .slick-prev:before,
 .gallery-carousel .slick-next:before {
-    content: ''; /* Remove default arrow icons */
+    content: '';
+    /* Remove default arrow icons */
     display: inline-block;
     border: solid white;
-    border-width: 0 2px 2px 0; /* Create arrow shape */
+    border-width: 0 2px 2px 0;
+    /* Create arrow shape */
     padding: 5px;
-    transform: rotate(135deg); /* Adjust rotation for direction */
-    color: white; /* White arrow color */
+    transform: rotate(135deg);
+    /* Adjust rotation for direction */
+    color: white;
+    /* White arrow color */
 }
 
 /* Adjust arrow direction */
 .gallery-carousel .slick-prev:before {
-    transform: rotate(135deg); /* Rotate for left arrow */
+    transform: rotate(135deg);
+    /* Rotate for left arrow */
 }
 
 .gallery-carousel .slick-next:before {
-    transform: rotate(-45deg); /* Rotate for right arrow */
+    transform: rotate(-45deg);
+    /* Rotate for right arrow */
 }
 
 /* Position the arrows */
 .gallery-carousel .slick-prev {
-    left: -40px; /* Adjust left position */
+    left: -40px;
+    /* Adjust left position */
 }
 
 .gallery-carousel .slick-next {
-    right: -40px; /* Adjust right position */
+    right: -40px;
+    /* Adjust right position */
 }
 
 .services-note {
@@ -192,71 +230,171 @@
 }
 
 .services-link {
-    color: #007bff;
+    color: #124c5f;
 }
 
 
 .gallery-banner {
-    position: relative; /* Makes this container the positioning context */
+    position: relative;
+    /* Makes this container the positioning context */
     text-align: center;
     font-family: "Josefin Slab", serif;
-  }
-  
-  .gallery-banner-image {
+}
+
+.gallery-banner-image {
     width: 100vw;
     height: auto;
     display: block;
     font-family: "Josefin Slab", serif;
-  }
-  
-  .banner-overlay {
+}
+
+.banner-overlay {
     position: absolute;
-    bottom: 0; /* Stick to the bottom of the banner */
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    background: rgba(5, 73, 94, 0.5); /* Semi-transparent dark background */
     text-align: center;
     padding: 10px 0;
     z-index: 1;
     font-family: "Josefin Slab", serif;
-  }
+    background-color: none !important;
+}
+
+div .banner-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1;
+    font-family: "Josefin Slab", serif;
+    background: none !important;
+}
 .banner-text p {
     font-family: "Josefin Slab", serif;
+    color: white !important;
 }
-  /* Style for the paragraph text inside the overlay */
-  .banner-overlay .banner-text p {
+
+/* Style for the paragraph text inside the overlay */
+.banner-overlay .banner-text p {
     margin: 0;
-    padding: 0 0 5px 0; /* Add some spacing below if needed */
-    color: #fff; /* White text for contrast */
-    font-size: 1.5rem; /* Adjust size as needed */
+    padding: 0 0 5px 0;
+    /* Add some spacing below if needed */
+    color: #fff;
+    /* White text for contrast */
+    font-size: 1.5rem;
+    /* Adjust size as needed */
     font-family: "Josefin Slab", serif;
     font-style: italic;
-  }
-  .banner-overlay .banner-text {
+}
+
+.banner-overlay .banner-text {
     margin: 0;
-    padding: 0 0 5px 0; /* Add some spacing below if needed */
-    color: #fff; /* White text for contrast */
-    font-size: 1.5rem; /* Adjust size as needed */
-    font-family: "Josefin Slab", serif;
+    padding: 0 0 5px 0;
+    /* Add some spacing below if needed */
+    color: #fff;
+    /* White text for contrast */
+    font-size: 2.3rem !important;
+    /* Adjust size as needed */
+    font-family: "Josefin Slab", serif !important;
+    text-transform: capitalize;
     font-style: italic;
-  }
-  /* Style for the link */
-  .banner-overlay .services-link {
+}
+
+/* Style for the link */
+.banner-overlay .services-link {
     color: #fff;
     font-size: 1.5rem;
     text-decoration: none;
     font-family: "Josefin Slab", serif;
     font-style: italic;
-  }
-  
+}
+
 .banner-overlay .services-link:hover {
-  color: #00d9ff; /* Change the color on hover */
-  transform: scale(1.05); /* Slightly enlarge the element */
-  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition */
+    color: #00d9ff;
+    /* Change the color on hover */
+    transform: scale(1.05);
+    /* Slightly enlarge the element */
+    transition: transform 0.3s ease, color 0.3s ease;
+    /* Smooth transition */
 }
 
 div .banner-overlay .p {
     font-family: "Josefin Slab", serif;
     text-decoration: none;
+    background-color: none !important;
 }
+/* Hide mobile version by default */
+.mobile-only {
+    display: none;
+  }
+  
+  /* Show desktop overlay by default */
+  .desktop-only {
+    display: block;
+  }
+@media only screen and (max-width: 768px) {
+    .desktop-only {
+        display: none;
+      }
+      /* Show the mobile text block */
+      .mobile-only {
+        display: block;
+        text-align: center;
+        padding: 10px 0;
+        font-family: "Josefin Slab", serif;
+        background: none;
+      }
+      
+      /* Optionally adjust banner image if needed */
+      .gallery-banner-image {
+        width: 100%;
+        height: auto;
+      }
+    /* Push the banner down so it doesn't overlap with the fixed header */
+    .galleries-page {
+      padding-top: 0px; /* Adjust this value to match your header's height */
+    }
+  
+    /* Adjust the banner so it sits below the header */
+    .gallery-banner {
+      margin-top: 80px; /* Again, match your header height or desired spacing */
+    }
+  
+    .gallery-banner {
+        display: flex;
+        flex-direction: column;
+      }
+    
+      .banner-overlay {
+        position: static; /* Remove absolute positioning */
+        transform: none;  /* Reset any transforms */
+        margin-top: 10px; /* Add spacing between image and text */
+        padding: 10px;    /* Optional: adjust padding as needed */
+        background: none; /* Remove background if necessary */
+        text-align: center; /* Ensure text is centered */
+      }
+      .banner-text {
+        padding: 10px 0;  /* use px units */
+        margin: 0;        /* remove any margin */
+        border: none;
+        color: #124c5f;
+      }
+      
+      .banner-text p {
+        margin: 0;        /* remove default margin on the paragraph */
+        padding: 0;       /* optional: remove extra padding if any */
+      }
+      
+      .services-link {
+        padding: 2px 0;   /* use px units */
+        margin: 0;        /* remove any margin */
+        color: #124c5f;
+        text-decoration: none;
+      }
+      
+  }
+  
