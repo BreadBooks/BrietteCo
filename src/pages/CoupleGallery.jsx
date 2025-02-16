@@ -3,6 +3,8 @@ import './CoupleGallery.css';
 import { Link } from 'react-router-dom';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
+import couplebannerImage from '../assets/couplebanner.webp'; // Import banner image
+
 import couple1 from '../assets/couple1.webp';
 import couple2 from '../assets/couple2.webp';
 import couple3 from '../assets/couple3.webp';
@@ -94,8 +96,12 @@ function CoupleGallery() {
 
     return (
         <div className="couple-gallery">
+            {/* Full-width Banner */}
+            <div className="couple-banner">
+                <img src={couplebannerImage} alt="Couple Banner" className="couple-banner-image" />
+            </div>
+
             <div className="gallery-header">
-                <h1 className="gallery-title">Couple Gallery</h1>
                 <p className="gallery-description">
                     Looking to book your own couple session?{' '}
                     <Link to="/services" className="booking-link">
