@@ -151,7 +151,7 @@
     .gradbanner-image {
         /* Adjust banner height or cropping for mobile, if needed */
         height: auto;
-        padding-top: 80px;
+        padding-top: 70px;
     }
 
     .gallery-grid {
@@ -172,4 +172,12 @@
         max-width: 80%;
         max-height: calc(85vh - 20px);
     }
+
+    .graduation-gallery {
+        padding-top: 0; /* Adjust if necessary since the banner is at the top */
+        text-align: center;
+        background-color: #fff;
+        z-index: 2;
+    }
+    
 }
