@@ -1,67 +1,76 @@
 /* General Header Styles */
 .header {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 3;
-    background-image: url("../assets/image13.webp");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    filter: grayscale(100%);
     justify-content: center;
-  }
-  
-  .header.compact {
-    width: 100%;
-    box-sizing: border-box;
-    background-color: #add8e6;
-    background-image: none;
-    filter: none;
-    height: auto; /* Let height adjust based on content */
-    justify-content: center;
-  }
-  
-  .header.background-active {
-    background-color: #add8e6;
-  }
-  
-  /* Updated Header Content Layout for Desktop */
-  .header-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem; /* Increased gap between left nav, logo, and right nav */
-    width: 100%;
-    background-color: rgba(173, 216, 230, 0.4);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-  }
-  
-  /* Nav containers for desktop */
-  .nav-left, .nav-right {
-    display: flex;
-    align-items: center;
-  }
-  
-  /* Even spacing between individual links */
-  .nav-left ul, .nav-right ul {
-    display: flex;
-    list-style: none;
-    gap: 2rem;  /* Increased spacing between links */
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-left ul li a, .nav-right ul li a {
-    color: #475e65;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 0.5rem;  /* Added padding around links */
-  }
-  .nav-left ul li a,
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background-image: url("../assets/image13.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: grayscale(100%);
+  justify-content: center;
+}
+
+.header.compact {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #add8e6;
+  background-image: none;
+  filter: none;
+  height: auto;
+  /* Let height adjust based on content */
+  justify-content: center;
+}
+
+.header.background-active {
+  background-color: #add8e6;
+}
+
+/* Updated Header Content Layout for Desktop */
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  /* Increased gap between left nav, logo, and right nav */
+  width: 100%;
+  background-color: rgba(173, 216, 230, 0.4);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* Nav containers for desktop */
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Even spacing between individual links */
+.nav-left ul,
+.nav-right ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  /* Increased spacing between links */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-left ul li a,
+.nav-right ul li a {
+  color: #475e65;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.5rem;
+  /* Added padding around links */
+}
+
+.nav-left ul li a,
 .nav-right ul li a {
   color: #475e65;
   font-weight: bold;
@@ -74,135 +83,151 @@
 .nav-left ul li a:hover,
 .nav-right ul li a:hover {
   color: #a9b5bb;
-  border-radius: 4px; /* Optional: smooth rounded corners */
+  border-radius: 4px;
+  /* Optional: smooth rounded corners */
 }
 
-  /* Centered Logo */
-  .logo {
-    text-align: center;
-  }
-  
-  .logo img {
-    max-width: 80px;
-    height: auto;
-    padding: 0.5rem; /* Added padding around logo */
-  }
-  
-  /* Mobile Hamburger Icon (hidden on desktop) */
-  .mobile-hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-  }
-  
-  .mobile-hamburger .bar {
-    width: 100%;
-    height: 3px;
-    background-color: #475e65;
-    margin: 3px 0;
-  }
-  
-  /* Mobile Menu (initially hidden) */
-  .mobile-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: rgba(173, 216, 230, 0.9);
-    z-index: 10;
-    padding: 1rem 0;
-  }
-  
-  .mobile-menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-  }
-  
-  .mobile-menu ul li a {
-    color: #475e65;
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 0.5rem;
-  }
-  
-  /* Media Queries */
-  
+/* Centered Logo */
+.logo {
+  text-align: center;
+}
+
+.logo img {
+  max-width: 80px;
+  height: auto;
+  padding: 0.5rem;
+  /* Added padding around logo */
+}
+
+/* Mobile Hamburger Icon (hidden on desktop) */
+.mobile-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.mobile-hamburger .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #475e65;
+  margin: 3px 0;
+}
+
+/* Mobile Menu (initially hidden) */
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: rgba(173, 216, 230, 0.9);
+  z-index: 10;
+  padding: 1rem 0;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.mobile-menu ul li a {
+  color: #475e65;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.5rem;
+}
+
+/* Media Queries */
+
 /* Mobile Styles */
 @media only screen and (max-width: 768px) {
   .header {
-    height: 20px;
-    overflow: hidden; /* Hide any content that exceeds 20px */
+    height: 20px !important;
+    overflow: hidden;
+    /* Hide any content that exceeds 20px */
     padding: 0;
+    background-attachment: scroll;
   }
-    .nav-left,
-    .nav-right {
-      display: none;
-    }
-    
-    /* Adjust header padding and layout for mobile */
-    .header.compact {
-      padding: 0px 0; /* Reduced vertical padding */
-    }
-  
-    .header-content {
-      justify-content: baseline;
-      padding: 0 10px; /* Reduced horizontal padding */
-      gap: 10px; /* Reduced gap between elements */
-    }
-    
-    /* Resize the logo */
-    .logo img {
-      max-width: 60px; /* Smaller logo size */
-      height: 100%;
-      padding-right: 100px;
-      border: border-box;
-      gap: 0;
-      padding-bottom: none;
-    }
-    
-  
-    /* Show mobile hamburger */
-    .mobile-hamburger {
-      display: flex;
-      padding-left: 100px; /* Adjust this as needed */
-      width: 25px; /* Optionally reduce the size */
-      height: 25px;
-    }
-    
-    .mobile-hamburger .bar {
-      width: 100%;
-      height: 2px; /* Thinner bars */
-      background-color: #475e65;
-      margin: 2px 0;
-    }
-    
-    /* Show mobile menu when toggled */
-    .mobile-menu.open {
-      display: block;
-    }
+
+  .nav-left,
+  .nav-right {
+    display: none;
   }
-  
-  /* Initially hide the header (or make it transparent) */
+
+  /* Adjust header padding and layout for mobile */
+  .header.compact {
+    padding: 0px 0;
+    /* Reduced vertical padding */
+    height: 20px !important;
+    overflow: hidden;
+    /* Hide any content that exceeds 20px */
+    padding: 0;
+    background-attachment: scroll;
+  }
+
+  .header-content {
+    justify-content: baseline;
+    padding: 0 10px;
+    /* Reduced horizontal padding */
+    gap: 10px;
+    /* Reduced gap between elements */
+  }
+
+  /* Resize the logo */
+  .logo img {
+    max-width: 60px;
+    /* Smaller logo size */
+    height: 100%;
+    padding-right: 100px;
+    border: border-box;
+    gap: 0;
+    padding-bottom: none;
+  }
+
+
+  /* Show mobile hamburger */
+  .mobile-hamburger {
+    display: flex;
+    padding-left: 100px;
+    /* Adjust this as needed */
+    width: 25px;
+    /* Optionally reduce the size */
+    height: 25px;
+  }
+
+  .mobile-hamburger .bar {
+    width: 100%;
+    height: 2px;
+    /* Thinner bars */
+    background-color: #475e65;
+    margin: 2px 0;
+  }
+
+  /* Show mobile menu when toggled */
+  .mobile-menu.open {
+    display: block;
+  }
+}
+
+/* Initially hide the header (or make it transparent) */
 .header.hidden {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-  }
-  
-  /* Show header once scrolled past hero */
-  .header.visible {
-    opacity: 1;
-    pointer-events: auto;
-    transition: opacity 0.3s ease;
-  }
-  
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Show header once scrolled past hero */
+.header.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.3s ease;
+}
