@@ -37,7 +37,7 @@ function AboutMeSections() {
       <section className="section section-three">
         <h2>
           <Link to="/services" className="redirect-link">
-            Book a session with me today!
+            Click Here to Book a Session with Me Today!
           </Link>
         </h2>
         <p>Let’s Create Something Beautiful!</p>

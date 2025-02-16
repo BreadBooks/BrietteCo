@@ -5,7 +5,7 @@
   flex-direction: column;
   margin: 0;
   padding: 0;
-  padding-top: 80px;
+  padding-top: 100px;
 }
 
 .section h2 {
@@ -25,6 +25,7 @@
   margin-bottom: 1rem;
   text-align: center;
   padding: 20px;
+  color: white;
 }
 
 
@@ -89,6 +90,9 @@
   color: inherit; /* Inherit the parent's color */
   text-decoration: none;
   transition: color 0.3s ease;
+  font-size: italic;
+  text-decoration: underline;
+  font-size: 1.3rem;
 }
 
 /* Desktop hover effect: change text color to light blue */
@@ -118,4 +122,12 @@
   .section p {
     font-size: 1rem;
   }
+  .about-me-sections {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    padding-top: 80px;
+  }
+  
 }
