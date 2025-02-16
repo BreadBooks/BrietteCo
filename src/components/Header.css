@@ -147,84 +147,60 @@
 
 /* Media Queries */
 
-/* Mobile Styles */
 @media only screen and (max-width: 768px) {
+  /* Force a header height that shows the content */
   .header {
-    height: 20px !important;
-    overflow: hidden;
+    height: 70px !important; /* Adjust as needed */
+    overflow: visible; /* Allow content to be visible */
     padding: 0;
     background-attachment: scroll;
-    z-index: 3;
   }
-
+  
+  /* Make sure header-content aligns its children at the top */
+  .header-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* Align children (logo & hamburger) to the top */
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px 10px; /* Reduced horizontal padding */
+    gap: 10px;
+  }
+  
+  /* Remove extra padding/margin from the logo */
+  .logo img {
+    max-width: 60px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Position the mobile hamburger at the top-right */
+  .mobile-hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+    width: 25px;
+    height: 25px;
+    padding-right: 50px;
+    padding-top: 15px;
+  }
+  
+  .mobile-hamburger .bar {
+    width: 100%;
+    height: 2px;
+    background-color: #475e65;
+  }
+  
+  /* Hide desktop navigation on mobile */
   .nav-left,
   .nav-right {
     display: none;
   }
-
-  /* Adjust header padding and layout for mobile */
-  .header.compact {
-    padding: 0px 0;
-    height: 70px !important;
-    overflow: hidden;
-    padding: 0;
-    background-attachment: scroll;
-  }
-
-  .header-content {
-    justify-content: baseline;
-    padding: 0 10px;
-    /* Reduced horizontal padding */
-    gap: 10px;
-    /* Reduced gap between elements */
-  }
-
-  /* Resize the logo */
-  .logo img {
-    max-width: 60px;
-    /* Smaller logo size */
-    height: 100%;
-    padding-right: 100px;
-    border: border-box;
-    gap: 0;
-    padding-bottom: none;
-  }
-
-
-  /* Show mobile hamburger */
-  .mobile-hamburger {
-    display: flex;
-    padding-left: 100px;
-    /* Adjust this as needed */
-    width: 25px;
-    /* Optionally reduce the size */
-    height: 25px;
-  }
-
-  .mobile-hamburger .bar {
-    width: 100%;
-    height: 2px;
-    /* Thinner bars */
-    background-color: #475e65;
-    margin: 2px 0;
-  }
-
+  
   /* Show mobile menu when toggled */
   .mobile-menu.open {
     display: block;
   }
-}
-
-/* Initially hide the header (or make it transparent) */
-.header.hidden {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-/* Show header once scrolled past hero */
-.header.visible {
-  opacity: 1;
-  pointer-events: auto;
-  transition: opacity 0.3s ease;
 }
