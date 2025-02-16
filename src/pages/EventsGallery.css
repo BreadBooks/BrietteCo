@@ -1,7 +1,45 @@
+/* Reset default margins/padding */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Banner Section */
+  .gallery-banner {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    z-index: 2;
+  }
+  
+  .gallery-banner-image {
+    width: 100vw;
+    height: auto;
+    display: block;
+  }
+  
+  .banner-overlay {
+    position: absolute;
+    bottom: 20px;          /* Adjust vertical placement as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);  /* Optional: for better text contrast */
+    padding: 10px 20px;
+  }
+  
+  .banner-text {
+    margin: 0;
+    font-family: 'Josefin Slab', serif;
+    font-size: 2.5rem;
+    color: #fff;
+  }
+  
+ 
 .events-gallery {
     width: 100%;
     margin: 0 auto;
-    padding: 40px 20px;
     text-align: center;
     padding-top: 50px;
   }
@@ -44,37 +82,34 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Swiper Navigation Buttons */
-.swiper-button-prev,
-.swiper-button-next {
-    color: #fff !important;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 15px;
-    border-radius: 50%;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.swiper-button-prev::after,
-.swiper-button-next::after {
-    font-size: 20px !important;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Banner Section */
+    .gallery-banner {
+      position: relative;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      z-index: 2;
+      padding: 0px 0 !important;
+    }
+
+    .events-gallery {
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+
     .gallery-title {
-        font-size: 1.5rem;
-    }
-    .swiper-button-prev,
-    .swiper-button-next {
-        padding: 10px;
-    }
-    .swiper-button-prev::after,
-    .swiper-button-next::after {
-        font-size: 16px !important;
-    }
+    padding-top: 0px 0;
+    font-size: 1.5rem;
+  }
+
+  .banner-text {
+    font-size: 1.8rem;
+  }
+  
+
 }

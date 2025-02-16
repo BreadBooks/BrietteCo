@@ -30,24 +30,29 @@
     flex: 0 0 auto;
 }
 
-/* Style for the left/right arrow buttons */
 .carousel-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     z-index: 2;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #ADD8E6; /* Light blue background */
     color: #fff;
     border: none;
     padding: 10px;
     cursor: pointer;
-}
-
-/* Adjusted arrow positions */
-.carousel-arrow.left {
-    left: 50px; /* or use a percentage: left: 5%; */
-}
-
-.carousel-arrow.right {
-    right: 50px; /* or use a percentage: right: 5%; */
-}
+    border-radius: 50%;        /* Makes the arrow container round */
+    transition: background-color 0.3s ease;
+  }
+  
+  .carousel-arrow:hover {
+    background-color: #90c3d4; /* Optional: darker shade on hover */
+  }
+  
+  .carousel-arrow.left {
+    left: 50px;
+  }
+  
+  .carousel-arrow.right {
+    right: 50px;
+  }
+  

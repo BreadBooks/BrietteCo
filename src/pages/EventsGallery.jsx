@@ -29,6 +29,9 @@ import event2_10 from '../assets/event2_10.webp';
 import event2_11 from '../assets/event2_11.webp';
 import event2_12 from '../assets/event2_12.webp';
 
+// Import the banner image for events
+import eventsBanner from '../assets/eventsbanner.webp';
+
 const event1Photos = [
   event1_1, event1_2, event1_3, event1_4, event1_5, event1_6,
   event1_7, event1_8, event1_9, event1_10, event1_11, event1_12
@@ -42,10 +45,22 @@ const event2Photos = [
 function EventsGallery() {
   return (
     <div className="events-gallery">
-      <h1 className="gallery-title">Ana & Luke - Courthouse Ceremony</h1>
+      {/* New Banner Section */}
+      <div className="gallery-banner">
+        <img
+          src={eventsBanner}
+          alt="Events Banner"
+          className="gallery-banner-image"
+        />
+        <div className="banner-overlay">
+        </div>
+      </div>
+
+      {/* Gallery Content */}
+      <h1 className="gallery-title">Ana &amp; Luke - Courthouse Ceremony</h1>
       <EventGalleryCarousel images={event1Photos} height="80vh" />
 
-      <h1 className="gallery-title">Fiza & Musa's Shaadi</h1>
+      <h1 className="gallery-title">Fiza &amp; Musa's Shaadi</h1>
       <EventGalleryCarousel images={event2Photos} height="80vh" />
     </div>
   );

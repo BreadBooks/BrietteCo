@@ -123,7 +123,7 @@ function ServicesPage() {
       {/* New Book Section */}
       <div className="book-section">
         <Link to="/contact" className="book-link">
-          Ready to Book? Get in Contact Today!
+          Ready to Book? Click to Get in Contact Today!
         </Link>
       </div>
     </div>

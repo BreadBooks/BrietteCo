@@ -90,7 +90,7 @@ function Header() {
             <Link to="/family-gallery" onClick={toggleMenu}>Family Gallery</Link>
           </li>
           <li>
-            <Link to="/events-gallery" onClick={toggleMenu}>Events Gallery</Link>
+            <Link to="/events" onClick={toggleMenu}>Events Gallery</Link>
           </li>
           <li>
             <Link to="/aboutme" onClick={toggleMenu}>About Me</Link>
