@@ -2,7 +2,7 @@
 .graduation-gallery {
     padding-top: 0; /* Adjust if necessary since the banner is at the top */
     text-align: center;
-    background-color: #ff48e7;
+    background-color: #fff;
     min-height: 100vh;
     z-index: 2;
 }
@@ -68,18 +68,15 @@
     object-fit: cover;
     cursor: pointer;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    background-color: #9e0101;
+    background-color: #f0f0f0;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 0;
 }
 
 .gallery-photo.visible {
     filter: blur(0);
     opacity: 1;
-    background-color: rgb(0, 174, 255);
-    z-index: 0;
 }
 
 .gallery-photo:hover {
@@ -181,7 +178,7 @@
     .graduation-gallery {
         padding-top: 0; /* Adjust if necessary since the banner is at the top */
         text-align: center;
-        background-color: #32be07;
+        background-color: #fff;
         z-index: 2;
     }
     
