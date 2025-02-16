@@ -53,7 +53,7 @@ p {
 .gallery-card {
     flex: 1 1 calc(33.33% - 2rem);
     /* Allow cards to take up 1/3 of the row with gaps */
-    background-color: #dddee2;
+    background-color: #ca3e06;
     border: none;
     box-shadow: none;
     text-align: center;
@@ -68,6 +68,7 @@ p {
     max-width: 300px;
     /* Optional: Restrict max width */
     font-family: "Josefin Slab", serif;
+    z-index: 0;
 }
 
 
