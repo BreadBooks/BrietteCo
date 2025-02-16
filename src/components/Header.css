@@ -139,15 +139,7 @@
   
 /* Mobile Styles */
 @media only screen and (max-width: 768px) {
-    .header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 3;
-      height: auto;
-      background-attachment: scroll;
-    }
-  
+    .header
     /* Hide desktop navigation */
     .nav-left,
     .nav-right {

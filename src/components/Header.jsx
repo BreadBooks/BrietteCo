@@ -15,21 +15,6 @@ function Header() {
       setVisible(true);
       return;
     }
-
-    // On homepage, show header only after scrolling past hero
-    const handleScroll = () => {
-      if (window.pageYOffset >= window.innerHeight) {
-        setVisible(true);
-      } else {
-        setVisible(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    // Check on mount in case the user has already scrolled
-    handleScroll();
-
-    return () => window.removeEventListener('scroll', handleScroll);
   }, [location]);
 
   return (
