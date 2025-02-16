@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
+import gradbanner from '../assets/gradbanner.webp'; // Import your banner image
+
 import grad1 from '../assets/grad1.webp';
 import grad2 from '../assets/grad2.webp';
 import grad3 from '../assets/grad3.webp';
@@ -57,23 +59,20 @@ function GraduationGallery() {
             }
         };
 
-        // Attach the scroll event listener
         window.addEventListener('scroll', handleScroll);
-
         return () => {
-            // Cleanup the scroll listener
             window.removeEventListener('scroll', handleScroll);
         };
     }, [visiblePhotos]);
 
     const loadMorePhotos = () => {
         if (visiblePhotos < photos.length) {
-            setVisiblePhotos((prev) => Math.min(prev + 4, photos.length)); // Load next batch of 4 photos
+            setVisiblePhotos((prev) => Math.min(prev + 4, photos.length));
         }
     };
 
     const handleImageLoad = (src) => {
-        setLoadedPhotos((prev) => [...prev, src]); // Add to fully loaded list
+        setLoadedPhotos((prev) => [...prev, src]);
     };
 
     const openModal = (index) => {
@@ -95,8 +94,12 @@ function GraduationGallery() {
 
     return (
         <div className="graduation-gallery">
+            {/* Full-width Banner */}
+            <div className="gradbanner">
+                <img src={gradbanner} alt="Graduation Banner" className="gradbanner-image" />
+            </div>
+
             <div className="gallery-header">
-                <h1 className="gallery-title">Graduation Photo Gallery</h1>
                 <p className="gallery-description">
                     Celebrate your achievement with a stunning graduation photo session.{' '}
                     <Link to="/services" className="booking-link">
@@ -155,7 +158,7 @@ function ImageWithFadeIn({ highResSrc, alt, onLoad, isLoaded, onClick }) {
             className={`gallery-photo ${isLoaded ? 'visible' : ''}`}
             onLoad={onLoad}
             onClick={onClick}
-            effect="blur" 
+            effect="blur"
         />
     );
 }
