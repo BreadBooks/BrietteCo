@@ -55,6 +55,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 .gallery-photo.blurred {
     filter: blur(20px); /* Blurred placeholder */
