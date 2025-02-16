@@ -1,6 +1,5 @@
 /* General Header Styles */
 .header {
-    justify-content: center;
   width: 100%;
   position: fixed;
   top: 0;
@@ -153,9 +152,9 @@
   .header {
     height: 20px !important;
     overflow: hidden;
-    /* Hide any content that exceeds 20px */
     padding: 0;
     background-attachment: scroll;
+    z-index: 3;
   }
 
   .nav-left,
@@ -166,10 +165,8 @@
   /* Adjust header padding and layout for mobile */
   .header.compact {
     padding: 0px 0;
-    /* Reduced vertical padding */
-    height: 20px !important;
+    height: 70px !important;
     overflow: hidden;
-    /* Hide any content that exceeds 20px */
     padding: 0;
     background-attachment: scroll;
   }
