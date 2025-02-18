@@ -99,6 +99,7 @@
     line-height: 1.0;       
     text-align: center;    
     word-wrap: normal;  
-    max-width: 90%;         
+    max-width: 90%;        
+    color: white; 
     
 }
