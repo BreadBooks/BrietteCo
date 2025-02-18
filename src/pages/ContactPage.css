@@ -82,6 +82,7 @@
     max-width: 600px;
     color: #363434;
     font-family: "Josefin Slab", serif;
+    background-color: white;
 }
 
 .contact-input,
@@ -128,6 +129,26 @@
     color: white;
     transition: background-color 0.3s ease-in-out;
     transition: color 0.2s ease-in-out;
+}
+
+.form-group {
+    background-color: whitesmoke;
+}
+
+.contact-input,
+.contact-textarea {
+  background-color: white !important;
+}
+
+/* Optional: override autofill styles in WebKit browsers */
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  background-color: white !important;
+}
+
+/* Ensure the form uses the light color scheme */
+.contact-form {
+  color-scheme: light;
 }
 
 /* Mobile Responsiveness */
