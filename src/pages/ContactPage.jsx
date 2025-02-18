@@ -5,6 +5,7 @@ import './ContactPage.css';
 import contactBanner from '../assets/contactbanner.webp'; // adjust the path as needed
 
 function ContactPage() {
+  console.log('User ID:', import.meta.env.VITE_EMAILJS_USER_ID);
   // State to track whether the form was successfully submitted
   const [submitted, setSubmitted] = useState(false);
   // Optional: state for error messages if needed
