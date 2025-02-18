@@ -118,6 +118,7 @@
 @media (max-width: 768px) {
     .services-banner {
         height: 40vh;
+        padding-top: 20px;
     }
 
     .service-card img {

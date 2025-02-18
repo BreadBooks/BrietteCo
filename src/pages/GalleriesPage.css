@@ -361,7 +361,7 @@ div .banner-overlay .p {
   
     /* Adjust the banner so it sits below the header */
     .gallery-banner {
-      margin-top: 80px; /* Again, match your header height or desired spacing */
+      margin-top: 70px; /* Again, match your header height or desired spacing */
     }
   
     .gallery-banner {
