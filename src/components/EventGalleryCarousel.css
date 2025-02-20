@@ -1,58 +1,138 @@
 /* The overall container holds the carousel and positions the arrows */
 .carousel-container {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 /* The carousel itself is a flex container with horizontal scrolling.
    We hide the native scrollbar for a cleaner look. */
 .carousel {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;     /* Firefox */
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
 }
 
 .carousel::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+  display: none; /* Chrome, Safari, Opera */
 }
 
-/* The container for each copy of your images array.
-   This ensures that the images in each copy stay together in a row. */
+/* Each “copy” is a block of images (the entire array). */
 .carousel-copy {
-    display: flex;
+  display: flex;
 }
 
-/* Each item is kept side by side with no gap.
-   Using flex-shrink: 0 ensures each image stays at its natural width. */
+/* Each item is side by side, with no shrinking. */
 .carousel-item {
-    flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
+/* Arrows for the carousel */
 .carousel-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-    background-color: #ADD8E6; /* Light blue background */
-    color: #fff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;        /* Makes the arrow container round */
-    transition: background-color 0.3s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background-color: #ADD8E6; /* Light blue background */
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.carousel-arrow:hover {
+  background-color: #90c3d4;
+}
+
+.carousel-arrow.left {
+  left: 50px;
+}
+
+.carousel-arrow.right {
+  right: 50px;
+}
+
+/* Lightbox overlay (fixed over the entire screen) */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Lightbox content container */
+.lightbox-content {
+  position: relative;
+  background: #fff;
+  padding: 20px;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Enlarged image */
+.lightbox-image {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* Lightbox next/prev arrows */
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+/* Lightbox close button */
+.lightbox-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Hide carousel arrows and lightbox arrows on smaller screens
+   so that swiping or tapping feels more natural. */
+@media (max-width: 768px) {
+  .carousel-arrow {
+    display: none;
   }
-  
-  .carousel-arrow:hover {
-    background-color: #90c3d4; /* Optional: darker shade on hover */
+  .lightbox-arrow {
+    display: none;
   }
-  
-  .carousel-arrow.left {
-    left: 50px;
-  }
-  
-  .carousel-arrow.right {
-    right: 50px;
-  }
-  
+}
