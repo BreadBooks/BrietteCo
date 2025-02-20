@@ -153,7 +153,10 @@
     padding: 0;
     background-attachment: scroll;
   }
-  
+
+.compact-content {
+  background-color: rgba(173, 216, 230, 0);
+}
   /* Make sure header-content aligns its children at the top */
   .header-content {
     display: flex;
@@ -183,7 +186,7 @@
     width: 25px;
     height: 25px;
     padding-right: 50px;
-    padding-top: 15px;
+    padding-top: 18px;
   }
   
   .mobile-hamburger .bar {
