@@ -17,53 +17,60 @@ import EventGallery from './pages/EventsGallery';
 import AboutPage from './pages/AboutPage';
 import LoadingOverlay from './components/LoadingOverlay';
 import useImagesLoaded from './hooks/useImagesLoaded';
+import Footer from './components/Footer'; // Import the Footer component
 import './App.css'; // For fade-in animations
 
-// Create a Content component that handles image loading for each route change
+// The Content component tracks only the main content images
 function Content() {
   const contentRef = useRef(null);
   const location = useLocation();
-  // Re-run the hook on location changes
   const imagesLoaded = useImagesLoaded(contentRef, [location]);
 
   return (
-    <div ref={contentRef} className={`App ${imagesLoaded ? 'fade-in' : ''}`}>
+    <>
       {!imagesLoaded && <LoadingOverlay />}
-      <Header />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Hero />
-              <WelcomeSection />
-              <section className="content-section">
-                <div className="gallery">
-                  <ImageGallery />
-                </div>
-              </section>
-              <MomentsSection />
-            </>
-          }
-        />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/galleries" element={<GalleriesPage />} />
-        <Route path="/aboutme" element={<AboutPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/family" element={<FamilyGallery />} />
-        <Route path="/couples" element={<CoupleGallery />} />
-        <Route path="/solo-portraits" element={<SoloGallery />} />
-        <Route path="/graduation" element={<GraduationGallery />} />
-        <Route path="/events" element={<EventGallery />} />
-      </Routes>
-    </div>
+      {/* Wrap only the main content in the ref */}
+      <div ref={contentRef} className={`content-wrapper ${imagesLoaded ? 'fade-in' : ''}`}>
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <WelcomeSection />
+                <section className="content-section">
+                  <div className="gallery">
+                    <ImageGallery />
+                  </div>
+                </section>
+                <MomentsSection />
+              </>
+            }
+          />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/galleries" element={<GalleriesPage />} />
+          <Route path="/aboutme" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/family" element={<FamilyGallery />} />
+          <Route path="/couples" element={<CoupleGallery />} />
+          <Route path="/solo-portraits" element={<SoloGallery />} />
+          <Route path="/graduation" element={<GraduationGallery />} />
+          <Route path="/events" element={<EventGallery />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 
 function App() {
   return (
     <Router>
-      <Content />
+      {/* Overall app container with flex styling */}
+      <div className="App">
+        <Content />
+        <Footer />
+      </div>
     </Router>
   );
 }
