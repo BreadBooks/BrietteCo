@@ -17,7 +17,7 @@ function Footer() {
           <FaGithub size={24} />
         </a>
         <a
-          href="https://www.pinterest.com/brietteco"
+          href="https://www.pinterest.com/brietteco/_created"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Pinterest"
