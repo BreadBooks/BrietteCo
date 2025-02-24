@@ -17,7 +17,7 @@ function Footer() {
           <FaGithub size={24} />
         </a>
         <a
-          href="https://www.pinterest.com/yourusername"
+          href="https://www.pinterest.com/brietteco"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Pinterest"
@@ -25,7 +25,7 @@ function Footer() {
           <FaPinterest size={24} />
         </a>
         <a
-          href="https://www.instagram.com/yourusername"
+          href="https://www.instagram.com"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
