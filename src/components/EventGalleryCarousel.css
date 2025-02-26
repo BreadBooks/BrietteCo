@@ -106,7 +106,9 @@
   padding: 5px;
   font-weight: bold;
 }
-
+.lightbox-arrow:hover {
+  color: #4d8097
+}
 .left-arrow {
   left: 0px;
   color: #8ddcf7;
@@ -117,6 +119,7 @@
   color: #8ddcf7;
 }
 
+
 /* Lightbox close button */
 .lightbox-close {
   position: absolute;
@@ -124,9 +127,13 @@
   right: 10px;
   background: none;
   border: none;
-  color: #333;
+  color: #8ddcf7;
   font-size: 2rem;
   cursor: pointer;
+}
+
+.lightbox-close:hover {
+  color: #4d8097;
 }
 
 /* Hide carousel arrows and lightbox arrows on smaller screens

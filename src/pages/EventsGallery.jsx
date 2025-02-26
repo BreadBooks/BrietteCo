@@ -57,7 +57,7 @@ function EventsGallery() {
       </div>
 
       {/* Gallery Content */}
-      <h1 className="gallery-title">Ana &amp; Luke - Courthouse Ceremony</h1>
+      <h1 className="gallery-title">Ana &amp; Luke's Courthouse Ceremony</h1>
       <EventGalleryCarousel images={event1Photos} height="80vh" />
 
       <h1 className="gallery-title">Fiza &amp; Musa's Shaadi</h1>

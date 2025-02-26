@@ -90,10 +90,8 @@
 }
 
 .logo img {
-  max-width: 80px;
+  max-width: 90px;
   height: auto;
-  padding: 0.5rem;
-  /* Added padding around logo */
 }
 
 /* Mobile Hamburger Icon (hidden on desktop) */
