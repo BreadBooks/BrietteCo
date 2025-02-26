@@ -17,10 +17,10 @@ import EventGallery from './pages/EventsGallery';
 import AboutPage from './pages/AboutPage';
 import LoadingOverlay from './components/LoadingOverlay';
 import useImagesLoaded from './hooks/useImagesLoaded';
-import Footer from './components/Footer'; // Import the Footer component
-import './App.css'; // For fade-in animations
+import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop'; // Import the ScrollToTop component
+import './App.css';
 
-// The Content component tracks only the main content images
 function Content() {
   const contentRef = useRef(null);
   const location = useLocation();
@@ -29,7 +29,6 @@ function Content() {
   return (
     <>
       {!imagesLoaded && <LoadingOverlay />}
-      {/* Wrap only the main content in the ref */}
       <div ref={contentRef} className={`content-wrapper ${imagesLoaded ? 'fade-in' : ''}`}>
         <Header />
         <Routes>
@@ -66,7 +65,7 @@ function Content() {
 function App() {
   return (
     <Router>
-      {/* Overall app container with flex styling */}
+      <ScrollToTop /> {/* This ensures the scroll position resets on every route change */}
       <div className="App">
         <Content />
         <Footer />
