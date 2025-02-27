@@ -172,6 +172,7 @@
     max-width: 60px;
     margin: 0;
     padding: 0;
+    image-rendering: crisp-edges;
   }
   
   /* Position the mobile hamburger at the top-right */
