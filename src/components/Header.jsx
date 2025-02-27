@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
-import logoalt from '../assets/logoalt.svg';
+import logoalt from '../assets/logoalt.webp';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
