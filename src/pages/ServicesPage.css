@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@1&family=Hubballi&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Pacifico&family=Playwrite+US+Modern:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* ----------------- Overall Services Page ----------------- */
 .services-page {
     display: flex;
     flex-direction: column; /* Stack sections vertically */
@@ -38,15 +40,33 @@
     width: 100%;
 }
 
+/* Make the service card a positioning context for the overlay */
 .service-card {
     text-align: center;
+    position: relative;
 }
 
+/* Adjust image sizing within the service card */
 .service-card img {
     width: auto;
     height: 80vh; /* Desktop height */
     max-height: 90vh;
     object-fit: contain;
+}
+
+/* ----------------- Overlay Text Styling ----------------- */
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the text */
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: white; /* Adjust as needed for contrast */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Improves readability */
+    pointer-events: none; /* Allows clicks to pass through */
 }
 
 /* ----------------- FAQ Section ----------------- */
