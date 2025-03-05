@@ -25,7 +25,7 @@ function Footer() {
           <FaPinterest size={24} />
         </a>
         <a
-          href="https://www.instagram.com"
+          href="https://www.instagram.com/brietteco"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
