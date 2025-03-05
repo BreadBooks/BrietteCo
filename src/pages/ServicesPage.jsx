@@ -69,7 +69,7 @@ function ServicesPage() {
         {
             question: "⭐ Can I ask questions before booking?",
             answer:
-                "Of course! I’m here to help. You can email me at briettecoportraits@gmail.com or fill out my contact form here. I strive to respond within 24 hours, though it may take a little longer on weekends."
+                "Of course! I’m here to help. You can email me at brietteco@gmail.com or fill out my contact form here. I strive to respond within 24 hours, though it may take a little longer on weekends."
         }
     ];
     const banner = (
