@@ -117,10 +117,15 @@
 
   .section h2 {
     font-size: 1.8rem;
+
   }
 
   .section p {
     font-size: 1rem;
+    text-align: center;
+    align-items: center;
+    text-wrap: inherit;
+
   }
   .about-me-sections {
     display: flex;

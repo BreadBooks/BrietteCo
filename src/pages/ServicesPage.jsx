@@ -24,7 +24,7 @@ function ServicesPage() {
         {
             question: "⭐ How many photos will I receive?",
             answer:
-                "I aim to deliver as many high-quality photos as possible so you have plenty of options to find your perfect shot! For a one-hour session, you can expect to receive at least 45 professionally edited images, though I often deliver even more."
+                "I aim to deliver as many high-quality photos as possible so you have plenty of options to find your perfect shot! For a one-hour session, you can expect to receive at least 50 professionally edited images, though I often deliver even more."
         },
         {
             question: "⭐ When will I receive my photos?",
@@ -34,7 +34,7 @@ function ServicesPage() {
         {
             question: "⭐ Where can my photos be taken?",
             answer:
-                "I shoot at outdoor locations throughout the DFW area, up to 35 miles from Plano, TX. If you’d like me to travel farther, I’m happy to do so for an additional $1 per mile. Not sure where to go? I’ll work with you to find the ideal spot for your shoot.\n\nI don’t currently have a private studio, but if you’re interested in an indoor session, I’m happy to help arrange a rentable studio—just note that the rental fee will be added to your session cost.\n\nSome locations, such as the Dallas Arboretum or Fort Worth Botanical Gardens, may require an admission or photography fee. If you’d like to shoot at one of these locations, the additional costs will be your responsibility."
+                "I shoot at outdoor locations throughout the DFW area, up to 50 miles from Plano, TX. If you’d like me to travel farther, I’m happy to do so for an additional fee. Not sure where to go? I’ll work with you to find the ideal spot for your shoot.\n\nI don’t currently have a private studio, but if you’re interested in an indoor session, I’m happy to help arrange a rentable studio—just note that the rental fee will be added to your session cost.\n\nSome locations, such as the Dallas Arboretum or Fort Worth Botanical Gardens, may require an admission or photography fee. If you’d like to shoot at one of these locations, the additional costs will be your responsibility."
         },
         {
             question: "⭐ Can I combine different types of photos in one session?",
@@ -57,9 +57,9 @@ function ServicesPage() {
                 "Yes! I’d love to include your furry friend in the session. Just let me know in advance so I can ensure our chosen location is pet-friendly."
         },
         {
-            question: "⭐ What happens if the weather is bad?",
+            question: "⭐ What happens if the weather is bad, Im late, something came up, etc?",
             answer:
-                "If the weather doesn’t cooperate, no worries! We can reschedule your session at no additional cost. Your comfort and safety are my top priority. We can also try to find some indoor locations like photo-friendly libraries, museums, cafes, or rentable studios can often be found for a fee."
+                "If the weather or life doesn’t cooperate, no worries! We can reschedule your session at no additional cost. Your comfort and safety are my top priority. For weather incidents, we can try to find some indoor locations like photo-friendly libraries, museums, cafes, or rentable studios can often be found for a fee."
         },
         {
             question: "⭐ What happens if I need to cancel?",
