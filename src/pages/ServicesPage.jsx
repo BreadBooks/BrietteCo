@@ -44,7 +44,7 @@ function ServicesPage() {
         {
             question: "⭐ Can I wear more than one outfit?",
             answer:
-                "Yes, outfit changes are welcome! As long as the session stays within the scheduled time, you’re free to change outfits. However, if the session runs more than 10 minutes over, there will be an additional charge of $35 for every extra 10 minutes."
+                "Yes, outfit changes are welcome! As long as the session stays within the scheduled time, you’re free to change outfits. However, if the session runs more than 15 minutes over, there will be an additional charge for extra time."
         },
         {
             question: "⭐ What should I wear?",
